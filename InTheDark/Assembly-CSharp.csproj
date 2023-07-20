@@ -60,43 +60,43 @@
     <Compile Include="Assets\01.Scripts\ActionController.cs" />
     <Compile Include="Assets\09.ImportAssets\Free HDR Skyboxes Pack\Example Scenes\Script\RotateCamera.cs" />
     <Compile Include="Assets\01.Scripts\IM\SpawnTrigger.cs" />
+    <Compile Include="Assets\01.Scripts\IM\InvertoryManager.cs" />
     <Compile Include="Assets\01.Scripts\QuickSlotController.cs" />
     <Compile Include="Assets\01.Scripts\RotateToMouse.cs" />
+    <Compile Include="Assets\01.Scripts\IM\firecracker.cs" />
     <Compile Include="Assets\01.Scripts\IM\MoveAgent.cs" />
     <Compile Include="Assets\01.Scripts\IM\Item2.cs" />
     <Compile Include="Assets\01.Scripts\PlayerMove.cs" />
     <Compile Include="Assets\01.Scripts\IM\EnemyFOV.cs" />
     <Compile Include="Assets\01.Scripts\IM\light.cs" />
-    <Compile Include="Assets\Simple Crosshair Generator\Scripts\Example\Utility\DisableOnPlay.cs" />
-    <Compile Include="Assets\UI pack\Scripts\FillValueNumber.cs" />
+    <Compile Include="Assets\01.Scripts\IM\amulet.cs" />
+    <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\Example\Utility\DisableOnPlay.cs" />
+    <Compile Include="Assets\09.ImportAssets\2\UI pack\Scripts\FillValueNumber.cs" />
     <Compile Include="Assets\01.Scripts\IM\Trap.cs" />
     <Compile Include="Assets\01.Scripts\IM\FOVEditor.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\flareround.cs" />
     <Compile Include="Assets\01.Scripts\IM\HideBox.cs" />
     <Compile Include="Assets\01.Scripts\IM\EnemyAI.cs" />
-    <Compile Include="Assets\Simple Crosshair Generator\Scripts\Example\SimpleCrosshairAPIExample.cs" />
+    <Compile Include="Assets\01.Scripts\IM\InventorySlot.cs" />
+    <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\Example\SimpleCrosshairAPIExample.cs" />
     <Compile Include="Assets\01.Scripts\ItemPickUp.cs" />
     <Compile Include="Assets\01.Scripts\IM\GameManager.cs" />
-    <Compile Include="Assets\Simple Crosshair Generator\Scripts\SimpleCrosshair.cs" />
+    <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\SimpleCrosshair.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\Flaregun.cs" />
     <Compile Include="Assets\01.Scripts\IM\mirror.cs" />
     <Compile Include="Assets\01.Scripts\Slot.cs" />
     <Compile Include="Assets\01.Scripts\IM\MyGizmo.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\flarebullet.cs" />
     <Compile Include="Assets\01.Scripts\IM\Door.cs" />
-    <Compile Include="Assets\01.Scripts\Item.cs" />
-    <Compile Include="Assets\01.Scripts\IM\InventorySlot.cs" />
-    <Compile Include="Assets\01.Scripts\IM\amulet.cs" />
-    <Compile Include="Assets\01.Scripts\IM\InvertoryManager.cs" />
-    <Compile Include="Assets\01.Scripts\IM\firecracker.cs" />
     <Compile Include="Assets\01.Scripts\IM\slot.cs" />
+    <Compile Include="Assets\01.Scripts\Item.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.Models\Kim\Smartphone\StandardColorMask.shader" />
     <None Include="Assets\09.ImportAssets\HighQualityBricks&amp;Walls\Shaders\stone-805287.shader" />
     <None Include="Assets\09.ImportAssets\Free HDR Skyboxes Pack\ReadMe.txt" />
     <None Include="Assets\09.ImportAssets\HighQualityBricks&amp;Walls\Shaders\wall-617961.shader" />
-    <None Include="Assets\UI pack\Documentation.txt" />
+    <None Include="Assets\09.ImportAssets\2\UI pack\Documentation.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
