@@ -144,8 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcda065cab0f51d4cb40484926cb2c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amulets: {fileID: 0}
+  amulets: {fileID: 1729406079425706178}
   enemy: {fileID: 0}
+  laymask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!65 &1689710529
 BoxCollider:
   m_ObjectHideFlags: 0
