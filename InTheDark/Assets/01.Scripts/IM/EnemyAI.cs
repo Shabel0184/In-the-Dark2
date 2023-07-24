@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    
+
     //귀신 종류
     public enum Type
     {
@@ -20,7 +20,8 @@ public class EnemyAI : MonoBehaviour
         PATROLL, //순찰
         TRACE,   //추격
         LISTEN,  //소리 들음
-        STUN     //플레이어 사용 아이템으로 인한 상태이상
+        STUN,    //플레이어 사용 아이템으로 인한 상태이상
+        P_DIE    //플레이어 사망, 플레이어 잡음
     }
     //종류
     public Type type;
@@ -112,10 +113,11 @@ public class EnemyAI : MonoBehaviour
         else if (type == Type.TRAP)
         {
             StartCoroutine(TrapAction());
+            StartCoroutine(TrapDown());
         }
         else if (type == Type.TANGK)
         {
-           // StartCoroutine(HearCheckState());
+            // StartCoroutine(HearCheckState());
         }
     }
 
@@ -129,13 +131,13 @@ public class EnemyAI : MonoBehaviour
         {
             float dist = Vector3.Distance(playerTr.position, enemyTr.position);
 
-            if(isStun < 0 && dist < traceDist)
+            if (isStun < 0 && dist < traceDist)
             {
-                if(dist < spotDist && enemyFOV.isViewPlayer())
+                if (dist < spotDist && enemyFOV.isViewPlayer())
                 {
                     state = State.TRACE;
                 }
-                else if(enemyFOV.isViewPlayer() && enemyFOV.isTracePlayer())
+                else if (enemyFOV.isViewPlayer() && enemyFOV.isTracePlayer())
                 {
                     state = State.TRACE;
                 }
@@ -144,15 +146,15 @@ public class EnemyAI : MonoBehaviour
                     state = State.PATROLL;
                 }
             }
-            else if(isStun < 0 && enemyFOV.isTracePlayer())
+            else if (isStun < 0 && enemyFOV.isTracePlayer())
             {
                 state = State.TRACE;
             }
-            else if(isStun < 0)
+            else if (isStun < 0)
             {
                 state = State.PATROLL;
             }
-            else if(isStun > 0)
+            else if (isStun > 0)
             {
                 state = State.STUN;
             }
@@ -169,7 +171,7 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator WalkAction()
     {
-        while(true)
+        while (true)
         {
             yield return ws;
 
@@ -184,7 +186,7 @@ public class EnemyAI : MonoBehaviour
                     moveAgent.TRACETARGET = playerTr.position;
                     anim.SetBool(hashRun, true);
                     anim.SetBool(hashWalk, false);
-                    break; 
+                    break;
                 case State.PATROLL:
                     moveAgent.PATROLLING = true;
                     anim.SetBool(hashRun, false);
@@ -228,16 +230,7 @@ public class EnemyAI : MonoBehaviour
                     moveAgent.PATROLLING = true;
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, true);
-                    yield return new WaitForSeconds(10f);
-                    //Instantiate(trapPrefab, transform.position, transform.rotation);
-                    var _Trap = GameManager.instance.GetTrap();
-                    if(_Trap != null)
-                    {
-                        _Trap.transform.position = transform.position;
-                        _Trap.transform.rotation = transform.rotation;
-                        _Trap.SetActive(true);
-                    }
-
+                    
                     break;
                 case State.LISTEN:
                     break;
@@ -252,6 +245,40 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
+
+    IEnumerator TrapDown()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        while (true)
+        {
+            int down = Random.Range(0, 4);
+            yield return new WaitForSeconds(5f);
+            switch (down)
+            {
+                case 2:
+                    var _Trap = GameManager.instance.GetTrap();
+                    if (_Trap != null)
+                    {
+                        _Trap.transform.position = transform.position;
+                        _Trap.transform.rotation = transform.rotation;
+                        _Trap.SetActive(true);
+                    }
+                    break;
+                case 4:
+                    _Trap = GameManager.instance.GetTrap();
+                    if (_Trap != null)
+                    {
+                        _Trap.transform.position = transform.position;
+                        _Trap.transform.rotation = transform.rotation;
+                        _Trap.SetActive(true);
+                    }
+                    break;
+            }
+        }
+
+    }
+
 
 
 
@@ -269,12 +296,12 @@ public class EnemyAI : MonoBehaviour
         //최대 안개 밀도
         float maxFogDensity = 0.25f;
 
-        while(true)
+        while (true)
         {
             float distance = Vector3.Distance(transform.position, playerTr.position);
 
             float t = Mathf.InverseLerp(minDistance, maxDistance, distance);
-            float fogDensity = Mathf.Lerp(maxFogDensity ,minFogDensity, t);
+            float fogDensity = Mathf.Lerp(maxFogDensity, minFogDensity, t);
 
             RenderSettings.fogDensity = fogDensity;
 
