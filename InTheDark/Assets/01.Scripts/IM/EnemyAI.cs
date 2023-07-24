@@ -30,6 +30,8 @@ public class EnemyAI : MonoBehaviour
 
     //플레이어 위치
     public Transform playerTr;
+    //플레이어 마지막 위치
+    Vector3 lastPlayerTr;
     //귀신 위치
     Transform enemyTr;
 
@@ -136,6 +138,7 @@ public class EnemyAI : MonoBehaviour
                 if (dist < spotDist && enemyFOV.isViewPlayer())
                 {
                     state = State.TRACE;
+                    //lastPlayerTr = playerTr.position;
                 }
                 else if (enemyFOV.isViewPlayer() && enemyFOV.isTracePlayer())
                 {
