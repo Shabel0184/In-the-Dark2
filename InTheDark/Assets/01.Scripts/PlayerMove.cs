@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
 
     bool rDown;
 
-    bool isRun;
+    bool isRun = false;
 
 
 
@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
         rotateToMouse = GetComponent<RotateToMouse>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         FreezeRotation();
@@ -52,6 +52,8 @@ public class PlayerMove : MonoBehaviour
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         rDown = Input.GetButton("Run");
+
+        isRun = rDown;
     }
 
     void Move()
@@ -66,22 +68,27 @@ public class PlayerMove : MonoBehaviour
         moveVec = cameraForward * vAxis + cameraRight * hAxis;
         moveVec.Normalize();
 
-        if (!isRun && rDown && moveVec.magnitude > 0)
+        if (isRun && moveVec.magnitude > 0 && currStamina > 10)
         {
-            if (currStamina > 1)
+
+            Debug.Log("스테미너 소모");
+            currStamina -= 20 * Time.deltaTime;
+            transform.position += moveVec * moveSpeed * 2f * Time.deltaTime;
+
+        }
+        else
+        {
+            if (currStamina < maxStamina)
             {
-                currStamina -= 20 * Time.deltaTime;
-                transform.position += moveVec * moveSpeed * 3f * Time.deltaTime;
+                Debug.Log("스테미너 회복");
+                currStamina += 15 * Time.deltaTime;
             }
-            
+            transform.position += moveVec * moveSpeed * Time.deltaTime;
         }
 
-        if (currStamina < maxStamina)
-        {
-            currStamina += 5 * Time.deltaTime;
-        }
 
-        transform.position += moveVec * moveSpeed * Time.deltaTime;
+
+
 
     }
 

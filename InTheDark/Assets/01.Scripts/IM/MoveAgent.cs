@@ -18,11 +18,12 @@ public class MoveAgent : MonoBehaviour
     NavMeshAgent agent;
 
     //순찰, 추격 속도 
-    readonly float patrolSpeed = 1.5f;
-    readonly float traceSpeed = 3.0f;
+    readonly float patrolSpeed = 2.5f;
+    readonly float traceSpeed = 4.0f;
 
     //회전 속도
     float damping = 1f;
+
     Transform enemyTr;
 
     EnemyAI enemyAI;
