@@ -70,11 +70,7 @@
     <Compile Include="Assets\01.Scripts\PlayerMove.cs" />
     <Compile Include="Assets\01.Scripts\IM\EnemyFOV.cs" />
     <Compile Include="Assets\01.Scripts\IM\light.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\01.Scripts\IM\Item\amulet.cs" />
-=======
-    <Compile Include="Assets\01.Scripts\IM\amulet.cs" />
->>>>>>> T
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\Example\Utility\DisableOnPlay.cs" />
     <Compile Include="Assets\09.ImportAssets\2\UI pack\Scripts\FillValueNumber.cs" />
     <Compile Include="Assets\01.Scripts\IM\Trap.cs" />
@@ -355,6 +351,18 @@
     </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.2\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.22f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.22f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.22f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.22f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
