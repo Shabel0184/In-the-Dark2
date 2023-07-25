@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +25,9 @@ public class ActionController : MonoBehaviour
 
     int isDarwer = 0;
 
+    public float drawerSpeed = 1f;
+    public float drawerDist = 0.3f;
+    
     void Update()
     {
         CheckItem();
@@ -41,9 +45,9 @@ public class ActionController : MonoBehaviour
 
     void CheckItem()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out hitInfo, range, _layerMask))
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, _layerMask))
         {
-            if(hitInfo.transform.tag == "ITEM")
+            if (hitInfo.transform.tag == "ITEM")
             {
                 ItemInfoAppear();
                 if (Input.GetKeyUp(KeyCode.E))
@@ -52,17 +56,18 @@ public class ActionController : MonoBehaviour
                     CanPickUp();
                 }
             }
-            else if(hitInfo.transform.tag == "DRAWERS")
-            { 
+            else if (hitInfo.transform.tag == "DRAWERS")
+            {
                 Debug.Log("서랍 충돌");
                 DrawerAppear();
-                if(Input.GetKeyUp(KeyCode.E))
+                if (Input.GetKeyUp(KeyCode.E))
                 {
                     Debug.Log("서랍 열기 키 누름");
-                    isDarwer = isDarwer < 1 ? 1 : 0;
+                    
+                    DrawerAction(hitInfo.collider);
                 }
             }
-           
+
         }
         else
         {
@@ -91,9 +96,9 @@ public class ActionController : MonoBehaviour
 
     void CanPickUp()
     {
-        if(pickupActivated)
+        if (pickupActivated)
         {
-            if(hitInfo.transform != null)
+            if (hitInfo.transform != null)
             {
                 Debug.Log(hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + " 획득 했습니다."); //퀵슬롯에 넣기
                 Destroy(hitInfo.transform.gameObject);
@@ -103,8 +108,30 @@ public class ActionController : MonoBehaviour
     }
 
 
-    void DrawerAction()
+    void DrawerAction(Collider hit)
     {
+        var drCheck = hit.GetComponent<DrawerCheck>();
+        Vector3 endPoint = drCheck.startPoint + new Vector3(drawerDist, hit.transform.position.y, hit.transform.position.z);
+        float progress = 0f;
+        isDarwer =drCheck.drawerState;
+        switch (isDarwer)
+        {
+            case 0:
+                while (progress < 1)
+                {
+                    progress += Time.deltaTime * drawerSpeed;
+                    progress = Mathf.Clamp01(progress);
+                    hit.transform.position = Vector3.Lerp(drCheck.startPoint, endPoint, progress);
+                }
+                hit.GetComponent<DrawerCheck>().drawerState = 1;
+                break;
+            case 1:
+                progress += Time.deltaTime * drawerSpeed;
+                progress = Mathf.Clamp01(progress);
+                hit.transform.position = Vector3.Lerp(endPoint, drCheck.startPoint, progress);
+                hit.GetComponent<DrawerCheck>().drawerState = 0;
+                break;
+        }
         
     }
 
