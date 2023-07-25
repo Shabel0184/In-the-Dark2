@@ -290,9 +290,9 @@ public class EnemyAI : MonoBehaviour
     IEnumerator WalkFogSet()
     {
         yield return new WaitForSeconds(0.1f);
-        //안개가 생기는 최소 거리
+        //안개 거리
         float minDistance = 5f;
-        //안개가 생기는 최대 거리
+        //안개 거리
         float maxDistance = 30f;
         //최소 안개 밀도
         float minFogDensity = 0f;

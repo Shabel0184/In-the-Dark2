@@ -10,17 +10,24 @@ public class ActionController : MonoBehaviour
     bool pickupActivated = false; //아이템 습득 가능할 시 true
     RaycastHit hitInfo; // 충돌체 정보 저장
 
-    [SerializeField]
-    LayerMask layerMask; // 특정 레이어를 가진 오브젝트에 대해서만 습득할 수 있어야 한다.
+    //[SerializeField]
+    //LayerMask layerMask; // 특정 레이어를 가진 오브젝트에 대해서만 습득할 수 있어야 한다.
 
     [SerializeField]
     Text actionText; // 행동을 보여 줄 텍스트
 
+    //레이어 마스크 비트 연산
+    const int itemLayer = 1 << 6;
+    const int drawerLayer = 1 << 20;
+    //OR로 두 개의 레이어 
+    int _layerMask = itemLayer | drawerLayer;
+
+    int isDarwer = 0;
 
     void Update()
     {
         CheckItem();
-        TryAction();
+        //TryAction();
     }
 
     void TryAction()
@@ -34,12 +41,28 @@ public class ActionController : MonoBehaviour
 
     void CheckItem()
     {
-        if(Physics.Raycast(transform.position, transform.forward, out hitInfo, range, layerMask))
+        if(Physics.Raycast(transform.position, transform.forward, out hitInfo, range, _layerMask))
         {
             if(hitInfo.transform.tag == "ITEM")
             {
                 ItemInfoAppear();
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    //CheckItem();
+                    CanPickUp();
+                }
             }
+            else if(hitInfo.transform.tag == "DRAWERS")
+            { 
+                Debug.Log("서랍 충돌");
+                DrawerAppear();
+                if(Input.GetKeyUp(KeyCode.E))
+                {
+                    Debug.Log("서랍 열기 키 누름");
+                    isDarwer = isDarwer < 1 ? 1 : 0;
+                }
+            }
+           
         }
         else
         {
@@ -52,6 +75,12 @@ public class ActionController : MonoBehaviour
         pickupActivated = true;
         actionText.gameObject.SetActive(true);
         actionText.text = hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "획득" + "<color=yellow>" + "(E)" + "</color>";
+    }
+    void DrawerAppear()
+    {
+        pickupActivated = true;
+        actionText.gameObject.SetActive(true);
+        actionText.text = "열기" + "<color=yellow>" + "(E)" + "</color>";
     }
 
     void ItemInfoDisappear()
@@ -71,6 +100,12 @@ public class ActionController : MonoBehaviour
                 ItemInfoDisappear();
             }
         }
+    }
+
+
+    void DrawerAction()
+    {
+        
     }
 
 
