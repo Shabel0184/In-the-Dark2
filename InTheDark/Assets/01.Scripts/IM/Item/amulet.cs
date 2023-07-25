@@ -27,6 +27,7 @@ public class amulet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            moveAgent = other.GetComponent<MoveAgent>();
             StartCoroutine(Stun());
         }
     }
