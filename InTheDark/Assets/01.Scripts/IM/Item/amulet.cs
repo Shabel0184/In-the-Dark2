@@ -7,7 +7,8 @@ public class amulet : MonoBehaviour
 {
     public GameObject amulets;
     public GameObject enemy;
-    MoveAgent moveAgent;
+    //MoveAgent moveAgent;
+    EnemyAI enemyAI;
     public LayerMask laymask;// 레이어 저장
     
 
@@ -27,7 +28,8 @@ public class amulet : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            moveAgent = other.GetComponent<MoveAgent>();
+            //moveAgent = other.GetComponent<MoveAgent>();
+            enemyAI = other.GetComponent<EnemyAI>();
             StartCoroutine(Stun());
         }
     }
@@ -42,7 +44,8 @@ public class amulet : MonoBehaviour
         {
             if (rayhit.collider.CompareTag("ENEMY"))
             {
-                moveAgent.Stop();
+                //moveAgent.Stop();
+                enemyAI.isStun = 1;
             }
             
         }

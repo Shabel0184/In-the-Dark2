@@ -11,8 +11,8 @@ public class PlayerMove : MonoBehaviour
     // 이동 속도
     public float currStamina = 100;
     public float maxStamina = 100;
-    // 캐릭터 스태미너
 
+    public bool isPlayerDie = false;
 
     RotateToMouse rotateToMouse; // 마우스 이동으로 카메라 회전
     Rigidbody rb;
@@ -33,12 +33,15 @@ public class PlayerMove : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rotateToMouse = GetComponent<RotateToMouse>();
+        rotateToMouse = GetComponentInChildren<RotateToMouse>();
     }
 
     void FixedUpdate()
     {
-
+        if(isPlayerDie)
+        {
+            return;
+        }
         FreezeRotation();
         UpdateRotate();
         Move();
@@ -67,29 +70,25 @@ public class PlayerMove : MonoBehaviour
 
         moveVec = cameraForward * vAxis + cameraRight * hAxis;
         moveVec.Normalize();
-
-        if (isRun && moveVec.magnitude > 0 && currStamina > 10)
+        
+        if (isRun && moveVec.magnitude > 0 && currStamina > 20)
         {
 
             Debug.Log("스테미너 소모");
             currStamina -= 20 * Time.deltaTime;
             transform.position += moveVec * moveSpeed * 2f * Time.deltaTime;
-
+            
         }
         else
         {
             if (currStamina < maxStamina)
             {
                 Debug.Log("스테미너 회복");
-                currStamina += 15 * Time.deltaTime;
+                currStamina += 10 * Time.deltaTime;
             }
             transform.position += moveVec * moveSpeed * Time.deltaTime;
+            
         }
-
-
-
-
-
     }
 
     void FreezeRotation()

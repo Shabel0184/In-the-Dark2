@@ -6,7 +6,7 @@ public class flareround : MonoBehaviour {
 	private Flaregun flare;
 	public AudioClip pickupSound;	
 
-	
+	// Use this for initialization
 	void Start () 
 	{
 		flaregun = GameObject.Find("flaregun");
@@ -14,7 +14,8 @@ public class flareround : MonoBehaviour {
 		
 	
 	}
-
+	
+	// Update is called once per frame
 	void Update () {
 	
 	}

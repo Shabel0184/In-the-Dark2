@@ -1513,6 +1513,7 @@ GameObject:
   - component: {fileID: 6834965177364187773}
   - component: {fileID: 5841186785063145666}
   - component: {fileID: 722927630177863182}
+  - component: {fileID: 7631256185942423393}
   m_Layer: 0
   m_Name: WalkGost
   m_TagString: ENEMY
@@ -1527,7 +1528,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3725906342415600743}
-  m_LocalRotation: {x: -0, y: -0.7550885, z: -0, w: 0.6556229}
+  m_LocalRotation: {x: 0, y: -0.7550873, z: 0, w: 0.65562433}
   m_LocalPosition: {x: 96.2, y: 0.07, z: 146.72}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
@@ -1581,7 +1582,7 @@ MonoBehaviour:
   playerTr: {fileID: 0}
   traceDist: 20
   spotDist: 5
-  isStun: -1
+  isStun: 0
   trapPrefab: {fileID: 3125723903973273496, guid: f6ccf02023d54c34f90079ab4c13359b, type: 3}
 --- !u!114 &6834965177364187774
 MonoBehaviour:
@@ -1595,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fae7023fa642b447a540577b58c6e8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRange: 20
+  viewRange: 30
   viewAngle: 60
 --- !u!114 &6834965177364187773
 MonoBehaviour:
@@ -1648,6 +1649,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &7631256185942423393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725906342415600743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6533152412feb499db1fd336b976ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3733885147487013873
 GameObject:
   m_ObjectHideFlags: 0

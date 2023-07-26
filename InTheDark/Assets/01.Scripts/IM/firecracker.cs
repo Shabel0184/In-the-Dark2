@@ -30,7 +30,8 @@ public class firecracker : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)&&throwready)
+        /*
+        if(Input.GetKeyUp(KeyCode.E)&&throwready)
         {
             if (!particle.isPlaying)
             {
@@ -38,7 +39,7 @@ public class firecracker : MonoBehaviour
                 Throw();
             }
             
-        }
+        }*/
     }
     void Throw()
     {

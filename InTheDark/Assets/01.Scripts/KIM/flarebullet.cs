@@ -9,7 +9,7 @@ public class flarebullet : MonoBehaviour {
 	private ParticleSystemRenderer smokepParSystem;
 	private bool myCoroutine;
 	private float smooth = 2.4f;
-	public 	float flareTimer = 5;
+	public 	float flareTimer = 9;
 	public AudioClip flareBurningSound;
 
 
