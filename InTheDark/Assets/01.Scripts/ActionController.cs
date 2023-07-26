@@ -25,8 +25,6 @@ public class ActionController : MonoBehaviour
 
     int isDarwer = 0;
 
-    public float drawerSpeed = 1f;
-    public float drawerDist = 0.3f;
     
     void Update()
     {
@@ -63,8 +61,8 @@ public class ActionController : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.E))
                 {
                     Debug.Log("서랍 열기 키 누름");
+                    hitInfo.collider.GetComponent<DrawerCheck>().OpenClose();
                     
-                    DrawerAction(hitInfo.collider);
                 }
             }
 
@@ -107,33 +105,6 @@ public class ActionController : MonoBehaviour
         }
     }
 
-
-    void DrawerAction(Collider hit)
-    {
-        var drCheck = hit.GetComponent<DrawerCheck>();
-        Vector3 endPoint = drCheck.startPoint + new Vector3(drawerDist, hit.transform.position.y, hit.transform.position.z);
-        float progress = 0f;
-        isDarwer =drCheck.drawerState;
-        switch (isDarwer)
-        {
-            case 0:
-                while (progress < 1)
-                {
-                    progress += Time.deltaTime * drawerSpeed;
-                    progress = Mathf.Clamp01(progress);
-                    hit.transform.position = Vector3.Lerp(drCheck.startPoint, endPoint, progress);
-                }
-                hit.GetComponent<DrawerCheck>().drawerState = 1;
-                break;
-            case 1:
-                progress += Time.deltaTime * drawerSpeed;
-                progress = Mathf.Clamp01(progress);
-                hit.transform.position = Vector3.Lerp(endPoint, drCheck.startPoint, progress);
-                hit.GetComponent<DrawerCheck>().drawerState = 0;
-                break;
-        }
-        
-    }
 
 
 }

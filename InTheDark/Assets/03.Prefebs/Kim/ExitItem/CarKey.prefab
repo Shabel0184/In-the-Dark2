@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7863301623646972091}
   - component: {fileID: 3993629068285288005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CarKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,6 +100,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ad10e4113786ee546b5e5563829d2b45, type: 3}
       propertyPath: m_Name
       value: sm_key_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ad10e4113786ee546b5e5563829d2b45, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad10e4113786ee546b5e5563829d2b45, type: 3}
