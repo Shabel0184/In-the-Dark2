@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 621694537121499993}
   - component: {fileID: 621694537121500004}
   - component: {fileID: 621694537121499995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 621694538211369781}
   - component: {fileID: 6997282930831923587}
   - component: {fileID: 6578995031633951459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: firecracker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,9 +280,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2254551187862948328, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254551193592861916, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254551193773613758, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2254551194142242484, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
       propertyPath: m_Name
       value: SparksEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254551194142242484, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254697975556417702, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
