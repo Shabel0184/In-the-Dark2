@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     public float maxStamina = 100;
 
     public bool isPlayerDie = false;
-
+    public bool stun = false;
     RotateToMouse rotateToMouse; // 마우스 이동으로 카메라 회전
     Rigidbody rb;
 
@@ -42,10 +42,13 @@ public class PlayerMove : MonoBehaviour
         {
             return;
         }
+        if (!stun)
+        {
+            Move();
+        }
+        GetInput();
         FreezeRotation();
         UpdateRotate();
-        Move();
-        GetInput();
     }
 
     void GetInput()

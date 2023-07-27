@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 621694537121499993}
   - component: {fileID: 621694537121500004}
   - component: {fileID: 621694537121499995}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,9 +98,9 @@ GameObject:
   - component: {fileID: 621694538211369781}
   - component: {fileID: 6997282930831923587}
   - component: {fileID: 6578995031633951459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: firecracker
-  m_TagString: Untagged
+  m_TagString: ITEM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 621694537121499993}
+  - {fileID: 8529271122821214244}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -194,15 +195,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 621694538211369780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb423e139ecde5141936bd5abaa6d900, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d74f6395b3ec2948a43463937ee65fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fire: {fileID: 621694538211369780}
   particle: {fileID: 5918246255248930887}
-  cam: {fileID: 0}
-  player: {fileID: 0}
-  throwForce: 10
-  throwTorque: 5
+  cam: {fileID: 3355012464797187103, guid: f4311b039267d1249959edbfb133981c, type: 3}
+  player: {fileID: 3355012464797187103, guid: f4311b039267d1249959edbfb133981c, type: 3}
+  throwForce: 5
+  throwTorque: 10
   firecount: 8
   throwdown: 0.1
 --- !u!54 &6578995031633951459
@@ -221,6 +222,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &7370058133842318898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8529271122821214244}
+  - component: {fileID: 3533738625246455060}
+  m_Layer: 6
+  m_Name: FirePos
+  m_TagString: Fire
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8529271122821214244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370058133842318898}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621694538211369776}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3533738625246455060
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7370058133842318898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5752488390086341401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,9 +326,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2254551187862948328, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254551193592861916, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254551193773613758, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2254551194142242484, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
       propertyPath: m_Name
       value: SparksEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254551194142242484, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254697975556417702, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f75a9d5af9fba4047a6b787e7bdde9e3, type: 3}

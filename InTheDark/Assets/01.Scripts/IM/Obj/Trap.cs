@@ -9,11 +9,16 @@ public class Trap : MonoBehaviour
     //최대 지속시간
     public float lifeTime = 20f;
 
+    AudioSource _audio;
+    public AudioClip clip;
+    
+    int enemyLayer = 12;
 
     private void OnEnable()
     {
         //최초 지속시간 0으로
         curTime = 0;
+        _audio = GetComponent<AudioSource>();
     }
 
 
@@ -37,12 +42,28 @@ public class Trap : MonoBehaviour
         //플레이어 충돌 시
         if(collision.collider.CompareTag("Player"))
         {
+            curTime = 0;
             //플레이어 정지 함수(이벤트) 호출
-
-            //오브젝트 비활성화
-            gameObject.SetActive(false);
+            StartCoroutine(PlayerStun(collision.collider));
+            Collider[] coll = Physics.OverlapSphere(transform.position, 30f, 1 << enemyLayer);
+            if(coll.Length > 0)
+            {
+                var AI = coll[0].GetComponent<EnemyAI>();
+                AI.isTrapping = 1;
+            }
 
         }
+    }
+
+
+    IEnumerator PlayerStun(Collider PlayerColl)
+    {
+        PlayerColl.GetComponent<PlayerMove>().stun = true;
+        _audio.PlayOneShot(clip, 1f);
+        yield return new WaitForSeconds(3f);
+        PlayerColl.GetComponent<PlayerMove>().stun = false;
+        gameObject.SetActive(false);
+
     }
 
 }

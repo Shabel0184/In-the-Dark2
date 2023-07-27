@@ -72,6 +72,46 @@ public class MoveAgent : MonoBehaviour
         agent.isStopped = false;
     }
 
+    //폭죽 추격 프로퍼티
+    public Vector3 firePos;
+    public Vector3 FIREITEMTRACE
+    {
+        get { return firePos; }
+        set
+        {
+            firePos = value;
+            agent.speed = traceSpeed;
+            damping = 7f;
+            
+            TraceFire(firePos);
+        }
+    }
+
+    //폭죽 위치 지정 함수
+    void TraceFire(Vector3 pos)
+    {
+        if (agent.isPathStale)
+        {
+            return;
+        }
+        agent.destination = pos;
+        agent.isStopped = false;
+
+        float dist = agent.remainingDistance;
+        if( dist < 1f)
+        {
+            enemyAI.state = EnemyAI.State.IDLE;
+        }
+    }
+
+
+
+
+
+
+
+
+
     //에너미 정지 함수
     public void Stop()
     {

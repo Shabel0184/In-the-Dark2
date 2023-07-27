@@ -20,6 +20,7 @@ public class EnemyAI : MonoBehaviour
         IDLE,
         PATROLL, //순찰
         TRACE,   //추격
+        TRACELAST,//플레이어 마지막 위치 추격
         LISTEN,  //소리 들음
         STUN,    //플레이어 사용 아이템으로 인한 상태이상
         P_DIE    //플레이어 사망, 플레이어 잡음
@@ -32,7 +33,10 @@ public class EnemyAI : MonoBehaviour
     //플레이어 위치
     public Transform playerTr;
     //플레이어 마지막 위치
-    Vector3 lastPlayerTr;
+    public Vector3 lastPlayerTr;
+    //폭죽 아이템 위치 
+    public Vector3 fireitemPos;
+
     //귀신 위치
     Transform enemyTr;
 
@@ -44,10 +48,13 @@ public class EnemyAI : MonoBehaviour
     public float spotDist = 5f;
 
     //스턴 아이템을 맞았는지
-    public int isStun = -1;
-
-    //트랩 오브젝트 프리팹
-    public GameObject trapPrefab;
+    public int isStun = 0;
+    //폭죽 아이템 인식 했는지
+    public int isListen = 0;
+    //플레이어 마지막 위치 추격 중인지
+    public int isLast = 0;
+    //트랩 밟았는지
+    public int isTrapping = 0;
 
     //코루틴 함수에 사용할 지연시간
     WaitForSeconds ws;
@@ -137,27 +144,40 @@ public class EnemyAI : MonoBehaviour
         {
             float dist = Vector3.Distance(playerTr.position, enemyTr.position);
 
-            if (isStun < 1 && dist < traceDist)
+            if (isListen < 1 && enemyFOV.FireItemTrace(out fireitemPos) && isStun < 1 && state != State.TRACE && state != State.IDLE)
+            {
+                state = State.LISTEN;
+                isListen = 1;
+            }
+            else if(isTrapping > 0)
+            {
+                state = State.TRACE;
+                yield return new WaitForSeconds(2f);
+                isTrapping = 0;
+            }
+            else if (isListen < 1 && isStun < 1 && dist < traceDist)
             {
                 if (dist < spotDist && enemyFOV.isViewPlayer())
                 {
+                    isLast = 1;
                     state = State.TRACE;
-                    //lastPlayerTr = playerTr.position;
+                    lastPlayerTr = playerTr.position;
                 }
                 else if (enemyFOV.isViewPlayer() && enemyFOV.isTracePlayer())
                 {
+                    isLast = 1;
                     state = State.TRACE;
+                    lastPlayerTr = playerTr.position;
                 }
-                else
-                {
-                    state = State.PATROLL;
-                }
+                
             }
-            else if (isStun < 1 && enemyFOV.isTracePlayer())
+            else if(state == State.TRACE && !enemyFOV.isViewPlayer() && !enemyFOV.isTracePlayer())
             {
-                state = State.TRACE;
+                isLast = 1;
+                state = State.TRACELAST;
+                
             }
-            else if (isStun < 1)
+            else if (isLast < 1 && isListen < 1 && isStun < 1)
             {
                 state = State.PATROLL;
             }
@@ -175,13 +195,16 @@ public class EnemyAI : MonoBehaviour
 
 
 
-
+    /// <summary>
+    /// WalkGost 상태에 따른 액션 코루틴
+    /// </summary>
+    /// <returns></returns>
     IEnumerator WalkAction()
     {
 
         while (!playerDie)
         {
-            yield return ws;
+            //yield return ws;
 
             switch (state)
             {
@@ -189,9 +212,18 @@ public class EnemyAI : MonoBehaviour
                     moveAgent.Stop();
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, false);
+                    yield return new WaitForSeconds(5f);
+                    isListen = 0;
+                    isLast = 0;
+                    state = State.PATROLL;
                     break;
                 case State.TRACE:
                     moveAgent.TRACETARGET = playerTr.position;
+                    anim.SetBool(hashRun, true);
+                    anim.SetBool(hashWalk, false);
+                    break;
+                case State.TRACELAST:
+                    moveAgent.FIREITEMTRACE = lastPlayerTr;
                     anim.SetBool(hashRun, true);
                     anim.SetBool(hashWalk, false);
                     break;
@@ -201,6 +233,10 @@ public class EnemyAI : MonoBehaviour
                     anim.SetBool(hashWalk, true);
                     break;
                 case State.LISTEN:
+                    //moveAgent 스크립트에 소리 들을 시 프로퍼티 추가
+                    moveAgent.FIREITEMTRACE = fireitemPos;
+                    anim.SetBool(hashRun, true);
+                    anim.SetBool(hashWalk, false);
                     break;
                 case State.STUN:
                     moveAgent.Stop();
@@ -221,11 +257,15 @@ public class EnemyAI : MonoBehaviour
                     StopAllCoroutines();
                     break;
             }
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
 
-
+    /// <summary>
+    /// Trap Gost 상태에 따른 액션
+    /// </summary>
+    /// <returns></returns>
     IEnumerator TrapAction()
     {
         while (!playerDie)
@@ -238,9 +278,19 @@ public class EnemyAI : MonoBehaviour
                     moveAgent.Stop();
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, false);
+                    yield return new WaitForSeconds(5f);
+                    isListen = 0;
+                    isLast = 0;
+                    state = State.PATROLL;
                     break;
                 case State.TRACE:
                     moveAgent.TRACETARGET = playerTr.position;
+                    anim.SetBool(hashRun, true);
+                    anim.SetBool(hashWalk, false);
+                    
+                    break;
+                case State.TRACELAST:
+                    moveAgent.FIREITEMTRACE = lastPlayerTr;
                     anim.SetBool(hashRun, true);
                     anim.SetBool(hashWalk, false);
                     break;
@@ -251,6 +301,9 @@ public class EnemyAI : MonoBehaviour
 
                     break;
                 case State.LISTEN:
+                    moveAgent.FIREITEMTRACE = fireitemPos;
+                    anim.SetBool(hashRun, true);
+                    anim.SetBool(hashWalk, false);
                     break;
                 case State.STUN:
                     moveAgent.Stop();
@@ -276,12 +329,12 @@ public class EnemyAI : MonoBehaviour
 
     IEnumerator TrapDown()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         while (!playerDie)
         {
             int down = Random.Range(0, 4);
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(3f);
             switch (down)
             {
                 case 2:
