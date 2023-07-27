@@ -56,46 +56,49 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\01.Scripts\IM\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\01.Scripts\KIM\ItemSpawn.cs" />
+    <Compile Include="Assets\01.Scripts\DrawerCheck.cs" />
     <Compile Include="Assets\01.Scripts\KIM\Gunflare.cs" />
     <Compile Include="Assets\01.Scripts\KIM\bulletDamage.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\swayc.cs" />
     <Compile Include="Assets\01.Scripts\ActionController.cs" />
     <Compile Include="Assets\09.ImportAssets\Free HDR Skyboxes Pack\Example Scenes\Script\RotateCamera.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Enemy\SpawnTrigger.cs" />
     <Compile Include="Assets\01.Scripts\IM\InvertoryManager.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\Trap.cs" />
     <Compile Include="Assets\01.Scripts\QuickSlotController.cs" />
     <Compile Include="Assets\01.Scripts\RotateToMouse.cs" />
-    <Compile Include="Assets\01.Scripts\KIM\Item2.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\Door.cs" />
+    <Compile Include="Assets\01.Scripts\KIM\InventoryItem.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\HideBox.cs" />
     <Compile Include="Assets\01.Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\01.Scripts\KIM\DoorRotate.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Item\amulet.cs" />
+    <Compile Include="Assets\01.Scripts\KIM\ItemData.cs" />
     <Compile Include="Assets\01.Scripts\KIM\light.cs" />
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\Example\Utility\DisableOnPlay.cs" />
+    <Compile Include="Assets\01.Scripts\KIM\UI_Inventory.cs" />
     <Compile Include="Assets\09.ImportAssets\2\UI pack\Scripts\FillValueNumber.cs" />
     <Compile Include="Assets\01.Scripts\IM\FOVEditor.cs" />
     <Compile Include="Assets\01.Scripts\KIM\flareround.cs" />
     <Compile Include="Assets\01.Scripts\IM\InventorySlot.cs" />
+    <Compile Include="Assets\01.Scripts\IM\firecracker.cs" />
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\Example\SimpleCrosshairAPIExample.cs" />
     <Compile Include="Assets\01.Scripts\ItemPickUp.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Enemy\EnemyFOV.cs" />
     <Compile Include="Assets\01.Scripts\IM\GameManager.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Enemy\MoveAgent.cs" />
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\SimpleCrosshair.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\Flaregun.cs" />
     <Compile Include="Assets\01.Scripts\KIM\mirror.cs" />
     <Compile Include="Assets\01.Scripts\Slot.cs" />
     <Compile Include="Assets\01.Scripts\IM\MyGizmo.cs" />
     <Compile Include="Assets\01.Scripts\KIM\flarebullet.cs" />
+    <Compile Include="Assets\01.Scripts\IM\PlayerDie.cs" />
+    <Compile Include="Assets\01.Scripts\KIM\ItemAsset.cs" />
     <Compile Include="Assets\01.Scripts\IM\slot.cs" />
     <Compile Include="Assets\01.Scripts\Item.cs" />
-    <Compile Include="Assets\01.Scripts\KIM\DoorRotate.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Obj\HideBox.cs" />
-    <Compile Include="Assets\01.Scripts\IM\PlayerDie.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Enemy\EnemyFOV.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Enemy\EnemyAI.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Obj\Trap.cs" />
-    <Compile Include="Assets\01.Scripts\DrawerCheck.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Obj\Door.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Enemy\MoveAgent.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Enemy\SpawnTrigger.cs" />
-    <Compile Include="Assets\01.Scripts\IM\firecracker.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Item\amulet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.Models\Kim\Smartphone\StandardColorMask.shader" />
@@ -774,11 +777,11 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>

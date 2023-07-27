@@ -25,7 +25,20 @@ public class ActionController : MonoBehaviour
 
     int isDarwer = 0;
 
+    //인벤토리
+    [SerializeField] private UI_Inventory uiinventory;
+    private InventoryItem inventoryItem;
     
+    /*
+    private void Awake()
+    {
+        inventoryItem = new InventoryItem();
+        //아이템 UI에 전달
+        uiinventory.SetInventory(inventoryItem); 
+    }
+
+    */
+
     void Update()
     {
         CheckItem();
