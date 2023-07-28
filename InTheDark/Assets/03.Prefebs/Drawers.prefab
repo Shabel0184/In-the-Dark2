@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8183216930172327805}
   - component: {fileID: 116317716}
   - component: {fileID: 116317720}
+  - component: {fileID: 3846341551738138220}
   m_Layer: 20
   m_Name: Drawer_Med2
   m_TagString: DRAWERS
@@ -116,6 +117,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &3846341551738138220
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170346087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49822256, y: 0.40740046, z: 0.14740005}
+  m_Center: {x: -0.11818437, y: -0.0000075921416, z: -0.000000018626455}
 --- !u!1 &8183216930170359157
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +309,7 @@ GameObject:
   - component: {fileID: 8183216930172536639}
   - component: {fileID: 1896510376}
   - component: {fileID: 1896510380}
+  - component: {fileID: 3591652836178671380}
   m_Layer: 20
   m_Name: Drawer4
   m_TagString: DRAWERS
@@ -397,6 +412,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &3591652836178671380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170370591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5023642, y: 0.29740006, z: 0.11740005}
+  m_Center: {x: -0.118188225, y: -0.0000076293945, z: 0.000000061467276}
 --- !u!1 &8183216930170372327
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +438,7 @@ GameObject:
   - component: {fileID: 8183216930172564821}
   - component: {fileID: 23346653}
   - component: {fileID: 23346657}
+  - component: {fileID: 30010971402480741}
   m_Layer: 20
   m_Name: Drawer3
   m_TagString: DRAWERS
@@ -512,6 +541,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &30010971402480741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170372327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5023642, y: 0.29740006, z: 0.11740005}
+  m_Center: {x: -0.118188225, y: -0.0000076293945, z: 0.000000061467276}
 --- !u!1 &8183216930170374379
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +650,7 @@ GameObject:
   - component: {fileID: 8183216930172528517}
   - component: {fileID: 248126402}
   - component: {fileID: 248126406}
+  - component: {fileID: 7949653383532620167}
   m_Layer: 20
   m_Name: Drawer2
   m_TagString: DRAWERS
@@ -710,6 +753,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &7949653383532620167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170385209}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5023642, y: 0.29740006, z: 0.11740005}
+  m_Center: {x: -0.118188225, y: -0.0000076293945, z: 0.000000061467276}
 --- !u!1 &8183216930170390049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,6 +1091,7 @@ GameObject:
   - component: {fileID: 8183216930172529691}
   - component: {fileID: 1694411583}
   - component: {fileID: 1694411587}
+  - component: {fileID: 2688116699581055392}
   m_Layer: 20
   m_Name: Drawer_Med3
   m_TagString: DRAWERS
@@ -1138,6 +1195,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &2688116699581055392
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170400003}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49822256, y: 0.40740046, z: 0.14740005}
+  m_Center: {x: -0.11818437, y: -0.0000075921416, z: -0.000000018626455}
 --- !u!1 &8183216930170415479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1221,7 @@ GameObject:
   - component: {fileID: 8183216930172564749}
   - component: {fileID: 1580137135}
   - component: {fileID: 1580137139}
+  - component: {fileID: 8411784905253457723}
   m_Layer: 20
   m_Name: Drawer_Med1
   m_TagString: DRAWERS
@@ -1254,6 +1325,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &8411784905253457723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170415479}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49822256, y: 0.40740046, z: 0.14740005}
+  m_Center: {x: -0.11818437, y: -0.0000075921416, z: -0.000000018626455}
 --- !u!1 &8183216930170575177
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1351,7 @@ GameObject:
   - component: {fileID: 8183216930172542629}
   - component: {fileID: 2089786499}
   - component: {fileID: 2089786503}
+  - component: {fileID: 6024439859137480307}
   m_Layer: 20
   m_Name: Drawer_Big1
   m_TagString: DRAWERS
@@ -1370,6 +1455,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &6024439859137480307
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170575177}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49822262, y: 0.6424002, z: 0.19740002}
+  m_Center: {x: -0.00020162766, y: 0.3474927, z: -0.53585917}
 --- !u!1 &8183216930170590411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,6 +1481,7 @@ GameObject:
   - component: {fileID: 8183216930172540181}
   - component: {fileID: 1838624333}
   - component: {fileID: 1838624337}
+  - component: {fileID: 6619347479131054508}
   m_Layer: 20
   m_Name: Drawer_Big2
   m_TagString: DRAWERS
@@ -1486,6 +1585,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &6619347479131054508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170590411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.49822253, y: 0.6424002, z: 0.19740002}
+  m_Center: {x: -0.00020166491, y: 0.3474927, z: -0.53585917}
 --- !u!1 &8183216930170591513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,6 +1611,7 @@ GameObject:
   - component: {fileID: 8183216930172529867}
   - component: {fileID: 655913768}
   - component: {fileID: 655913772}
+  - component: {fileID: 6582270321193907959}
   m_Layer: 20
   m_Name: Drawer1
   m_TagString: DRAWERS
@@ -1601,6 +1714,19 @@ MonoBehaviour:
   drawerState: 0
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
+--- !u!65 &6582270321193907959
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8183216930170591513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5023642, y: 0.29740006, z: 0.11740005}
+  m_Center: {x: -0.118188225, y: -0.0000076293945, z: 0.000000061467276}
 --- !u!1001 &5529191221952262579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2054,6 +2180,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8183216930170124329}
     m_Modifications:
+    - target: {fileID: 1038668955359368733, guid: 5a6af3b0f3af5ff4fa2ff9f3b0664adc, type: 3}
+      propertyPath: items.Array.data[3].Prefab
+      value: 
+      objectReference: {fileID: 1573819641277514980, guid: f95042047c958844ea343041344345e5, type: 3}
+    - target: {fileID: 1038668955359368733, guid: 5a6af3b0f3af5ff4fa2ff9f3b0664adc, type: 3}
+      propertyPath: items.Array.data[7].Prefab
+      value: 
+      objectReference: {fileID: 2863277918908139363, guid: 7d7576e816935bf4a9e1a91cccd36231, type: 3}
+    - target: {fileID: 1038668955359368733, guid: 5a6af3b0f3af5ff4fa2ff9f3b0664adc, type: 3}
+      propertyPath: items.Array.data[11].Prefab
+      value: 
+      objectReference: {fileID: 621694538211369780, guid: f38ba63b14f614945a5efb223af3764b, type: 3}
     - target: {fileID: 4608054068491803954, guid: 5a6af3b0f3af5ff4fa2ff9f3b0664adc, type: 3}
       propertyPath: m_Name
       value: itemspwanpoint
