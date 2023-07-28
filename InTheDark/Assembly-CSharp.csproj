@@ -61,6 +61,7 @@
     <Compile Include="Assets\01.Scripts\DrawerCheck.cs" />
     <Compile Include="Assets\01.Scripts\KIM\Gunflare.cs" />
     <Compile Include="Assets\01.Scripts\KIM\bulletDamage.cs" />
+    <Compile Include="Assets\01.Scripts\IM\TitleUIManager.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\swayc.cs" />
     <Compile Include="Assets\01.Scripts\ActionController.cs" />
     <Compile Include="Assets\09.ImportAssets\Free HDR Skyboxes Pack\Example Scenes\Script\RotateCamera.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\09.ImportAssets\2\UI pack\Scripts\FillValueNumber.cs" />
     <Compile Include="Assets\01.Scripts\IM\FOVEditor.cs" />
     <Compile Include="Assets\01.Scripts\KIM\flareround.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\HideLocker.cs" />
     <Compile Include="Assets\01.Scripts\IM\InventorySlot.cs" />
     <Compile Include="Assets\01.Scripts\IM\firecracker.cs" />
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\Example\SimpleCrosshairAPIExample.cs" />
@@ -99,8 +101,6 @@
     <Compile Include="Assets\01.Scripts\KIM\ItemAsset.cs" />
     <Compile Include="Assets\01.Scripts\IM\slot.cs" />
     <Compile Include="Assets\01.Scripts\Item.cs" />
-    <Compile Include="Assets\01.Scripts\IM\TitleUIManager.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Obj\HideLocker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.Models\Kim\Smartphone\StandardColorMask.shader" />

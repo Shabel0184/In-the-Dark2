@@ -12,7 +12,7 @@ public class Trap : MonoBehaviour
     AudioSource _audio;
     public AudioClip clip;
     
-    int enemyLayer = 12;
+    int enemyLayer = 11;
 
     private void OnEnable()
     {

@@ -34,14 +34,14 @@ public class DoorRotate : MonoBehaviour
 
     }
 
-    void DoorOpen()
+    public void DoorOpen()
     {
         Debug.Log("¿­¸²");
         anim.SetBool("Open", true);
         anim.SetBool("Close", false);
     }
 
-    void DoorClose()
+    public void DoorClose()
     {
         Debug.Log("´ÝÈû");
         anim.SetBool("Open", false);

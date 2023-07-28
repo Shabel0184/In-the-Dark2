@@ -41,8 +41,8 @@ public class EnemyAI : MonoBehaviour
     Transform enemyTr;
 
     //추격 범위
-    [Range(1f, 20f)]
-    public float traceDist;
+    
+    public float traceDist = 20f;
 
     //강제 인식 범위
     public float spotDist = 5f;

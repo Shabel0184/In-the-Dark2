@@ -125,7 +125,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.209, y: -0.504, z: -3.704}
-  m_LocalScale: {x: 2, y: 1.3, z: 1.8000004}
+  m_LocalScale: {x: 2, y: 2, z: 1.8000004}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6835066721426336003}
@@ -208,8 +208,9 @@ GameObject:
   - component: {fileID: 5687245184399181166}
   - component: {fileID: 5011528809374423519}
   - component: {fileID: 211970962796170827}
+  - component: {fileID: 1078843114}
   m_Layer: 0
-  m_Name: doorRotate
+  m_Name: cabinetRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,8 +243,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.54704094, y: 1.5, z: 1.2}
-  m_Center: {x: 0.00028705597, y: 0, z: 0.76}
+  m_Size: {x: 0.78584355, y: 1.5, z: 1.2}
+  m_Center: {x: -0.11911396, y: 0, z: 0.75999993}
 --- !u!114 &5011528809374423519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950644117759100333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e8c230ea55b9a34799c4c2f30cbaa2f, type: 3}
   m_Name: 
@@ -267,7 +268,7 @@ Animator:
   m_GameObject: {fileID: 6950644117759100333}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 779a5c0f1b472f04d821762c782eeb7d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 88baec00b88f383479b0ede8871bed56, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -278,3 +279,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1078843114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950644117759100333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044fce524e3478e4bb4344097204611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorOffset: {x: 0, y: 0, z: 0}
+  moveDuration: 1

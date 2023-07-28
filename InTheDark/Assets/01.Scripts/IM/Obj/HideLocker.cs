@@ -7,12 +7,20 @@ public class HideLocker : MonoBehaviour
     int isHide = 0;
     
     public Vector3 doorOffset;
+    DoorRotate door;
+    Rigidbody rb;
     
     public float moveDuration = 1f; // ÀÌµ¿¿¡ °É¸®´Â ½Ã°£
 
     private void Awake()
     {
-        doorOffset = transform.position;
+        //doorOffset = transform.position;
+       
+    }
+    private void Start()
+    {
+        door = GetComponent<DoorRotate>();
+        rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -39,16 +47,20 @@ public class HideLocker : MonoBehaviour
 
         switch (isHide)
         {
+            
             case 0: //Ä³ºñ´Ö OUT
+                rb.isKinematic = true;
                 yield return new WaitForSeconds(0.5f);
                 //¹® ´ÝÈû
-                transform.position = doorOffset;
+                //doorOffset = transform.position;
+                door.DoorClose();
                 break;
 
             case 1: //Ä³ºñ´Ö IN
-                
+                rb.isKinematic = true;
                 //¹® ¿­¸²
-                transform.Translate(0, 0, -1.5f);
+                //transform.Translate(0, 0, -1.5f);
+                door.DoorOpen();
                 yield return new WaitForSeconds(0.2f);
                 
                 break;
