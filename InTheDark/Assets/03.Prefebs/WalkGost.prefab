@@ -1509,8 +1509,8 @@ GameObject:
   - component: {fileID: 4106936236919150301}
   - component: {fileID: 7935035143922846887}
   - component: {fileID: 5161502522511772012}
-  - component: {fileID: 6834965177364187774}
   - component: {fileID: 6834965177364187773}
+  - component: {fileID: 6834965177364187774}
   - component: {fileID: 5841186785063145666}
   - component: {fileID: 722927630177863182}
   - component: {fileID: 7631256185942423393}
@@ -1574,30 +1574,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3725906342415600743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b4639d139460f44b52381630e43d19, type: 3}
+  m_Script: {fileID: 11500000, guid: 394d355df3539cf47bd82f3c7e11a91b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
   state: 0
   playerTr: {fileID: 0}
-  traceDist: 20
+  lastPlayerTr: {x: 0, y: 0, z: 0}
+  fireitemPos: {x: 0, y: 0, z: 0}
+  traceDist: 0
   spotDist: 5
   isStun: 0
-  trapPrefab: {fileID: 3125723903973273496, guid: f6ccf02023d54c34f90079ab4c13359b, type: 3}
---- !u!114 &6834965177364187774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3725906342415600743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fae7023fa642b447a540577b58c6e8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRange: 30
-  viewAngle: 60
+  isListen: 0
+  isLast: 0
+  isTrapping: 0
 --- !u!114 &6834965177364187773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1607,12 +1597,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 3725906342415600743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b4b85213711084ca391ed840f7f1dd, type: 3}
+  m_Script: {fileID: 11500000, guid: bf0d09b34fb1f5d4783e4d79c38fbda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Spawnpoints: []
   WayPoints: []
   nextIndex: 0
+  firePos: {x: 0, y: 0, z: 0}
+--- !u!114 &6834965177364187774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3725906342415600743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb56d3d359bfab44bc2a51c9b72e736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRange: 15
+  viewAngle: 120
 --- !u!195 &5841186785063145666
 NavMeshAgent:
   m_ObjectHideFlags: 0

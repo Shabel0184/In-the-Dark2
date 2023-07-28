@@ -37,7 +37,7 @@ public class mirror : MonoBehaviour
     //플레이어 스폰 포인트에서 랜덤 스폰
     void SpwanPoints()
     {
-       Transform[]spawnpoint = GameObject.Find("spawnpointGroup").GetComponentsInChildren<Transform>();
+       Transform[]spawnpoint = GameObject.Find("PlayerspawnpointGroup").GetComponentsInChildren<Transform>();
        int point = Random.Range(1, spawnpoint.Length);
        player.transform.position = spawnpoint[point].transform.position;
        

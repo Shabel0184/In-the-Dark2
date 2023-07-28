@@ -3429,6 +3429,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7463316856670824782, guid: 7c5293d50b5035c4097b005df690958f, type: 3}
   m_PrefabInstance: {fileID: 1460800283}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1460800285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1417013662728908602, guid: 7c5293d50b5035c4097b005df690958f, type: 3}
+  m_PrefabInstance: {fileID: 1460800283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1460800286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1460800285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075d6998bdb4bb341826d6569b3725b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hidePos: {fileID: 0}
+  playerHidePos: {fileID: 0}
+  moveDuration: 1
 --- !u!1 &1499038902
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,6 +3497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 3
   actionText: {fileID: 353177028}
+  uiinventory: {fileID: 0}
 --- !u!81 &1499038905
 AudioListener:
   m_ObjectHideFlags: 0
