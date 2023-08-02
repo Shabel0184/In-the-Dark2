@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HideLocker : MonoBehaviour
@@ -23,6 +24,8 @@ public class HideLocker : MonoBehaviour
         rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
 
+   
+
     private void OnTriggerStay(Collider other)
     {
         if (isHide < 1 && other.CompareTag("Player") && Input.GetKeyUp(KeyCode.F))
@@ -39,6 +42,7 @@ public class HideLocker : MonoBehaviour
             StartCoroutine(HideDoor(other));
 
         }
+       
     }
 
     IEnumerator HideDoor(Collider playerCollider)

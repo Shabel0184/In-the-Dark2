@@ -11,8 +11,8 @@ public class Gunflare : MonoBehaviour
 
     Animation anim;
 
-    public int maxBullet = 3; //최대 총알 개수
-    public int remainbullet = 2;//남은 총알 개수
+    public int maxBullet = 1; //최대 총알 개수
+    public int remainbullet = 1;//남은 총알 개수
     public int currenbullet = 1;//탄창에있는 총알 개수
     
 
@@ -33,6 +33,12 @@ public class Gunflare : MonoBehaviour
 
         layerMask = 1 << enemyLayer | 1 << exitobjLayer;
 
+        
+            
+
+        
+        
+
     }
 
 
@@ -48,46 +54,37 @@ public class Gunflare : MonoBehaviour
             isfire = false;
         }
 
+
+
         //발사
-        if (Input.GetKeyDown(KeyCode.E) && !anim.isPlaying)
+        if (isfire && !anim.isPlaying)
         {
             if (currenbullet > 0)
             {
                 Fire();
+                gameObject.SetActive(false);
+                
             }
             else
             {
                 anim.Play("noAmmo");
             }
-
         }
+       
 
-        //재장전
-        if (Input.GetKeyDown(KeyCode.R) && !anim.isPlaying)
-        {
-            Reload();
-        }
-
-        void Fire()
-        {
-            currenbullet--;
-            if (currenbullet == 0)
-            {
-                currenbullet = 0;
-            }
-            anim.CrossFade("Shoot");
-            Instantiate(flarebulletPrefab, barreEnd.position, barreEnd.rotation);
-            Instantiate(MuzzleParticle, barreEnd.position, barreEnd.rotation);
-        }
-
-        void Reload()
-        {
-            if(remainbullet >= 1 && currenbullet == 0)
-            {
-                remainbullet--;
-                currenbullet++;
-                anim.CrossFade("Reload");
-            }
-        }
     }
+
+
+    void Fire()
+    {
+        currenbullet--;
+        if (currenbullet == 0)
+        {
+            currenbullet = 0;
+        }
+        anim.CrossFade("Shoot");
+        Instantiate(flarebulletPrefab, barreEnd.position, barreEnd.rotation);
+        Instantiate(MuzzleParticle, barreEnd.position, barreEnd.rotation);
+    }
+
 }

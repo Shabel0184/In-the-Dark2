@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
@@ -8,6 +9,8 @@ public class Slot : MonoBehaviour
     public Item item; // 획득한 아이템
     public int itemCount; // 획득한 아이템의 개수
     public Image itemImage; // 아이템 이미지
+
+    bool itempull;
 
     [SerializeField]
     Text text_Count;
@@ -29,7 +32,7 @@ public class Slot : MonoBehaviour
         itemCount = _count;
         itemImage.sprite = item.itemImage;
 
-        if(item.itemType != Item.ItemType.Equipment)
+        if (item.itemType != Item.ItemType.Exititem)
         {
             go_CountImage.SetActive(true);
             text_Count.text = itemCount.ToString();
@@ -47,11 +50,51 @@ public class Slot : MonoBehaviour
     // 해당 슬롯의 아이템 갯수 업데이트
     public void SetSlotCount(int _count)
     {
-        itemCount += _count;
-        text_Count.text = itemCount.ToString();
+        if (itemCount < 6)
+        {
+            itempull = false;
+        }
+        else
+        {
+            itempull = true;
+        }
 
-        if (itemCount <= 0)
+        if (!itempull)
+        {
+            itemCount += _count;
+            text_Count.text = itemCount.ToString();
+            itempull = false;
+
+            if (itemCount <= 0)
+                ClearSlot();
+            
+        }
+        else
+        {
+            return;
+        }
+
+
+    }
+
+    public bool itemUse()
+    {
+        if(item !=  null && itemCount > 0)
+        {
+            itemCount--;
+            if(itemCount == 0)
+            {
+                ClearSlot();
+            }
+            text_Count.text = itemCount.ToString();
+            return true;
+
+        }
+        else
+        {
             ClearSlot();
+            return false;
+        }
     }
 
     // 해당 슬롯 하나 삭제

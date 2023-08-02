@@ -20,7 +20,7 @@ public class DoorRotate : MonoBehaviour
     {
         if (other.gameObject.tag=="Player" && Input.GetKeyDown(KeyCode.F))
         {
-                DoorOpen();
+             DoorOpen();
         }
         else
         {
@@ -33,6 +33,7 @@ public class DoorRotate : MonoBehaviour
         }
 
     }
+
 
     public void DoorOpen()
     {

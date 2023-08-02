@@ -33,7 +33,7 @@ public class ItemSpawn : MonoBehaviour
     {
       
       RandomItem randomItem = items[GetRandomIndex()];
-      GameObject item = Instantiate(randomItem.Prefab, transform.position,Quaternion.identity);
+      GameObject item = Instantiate(randomItem.Prefab, transform.position,randomItem.Prefab.transform.rotation);
       item.transform.parent = itemspawnpoint.transform;
      
     }

@@ -10,24 +10,36 @@ public class TitleUIManager : MonoBehaviour
     float fadevalue = 0;
     float backgroundvolum = 1;
     AudioSource backgroundM;
+    public AudioClip backgroundClip;
+    public AudioClip buttonClip;
+    public GameObject glassImage;
+    public GameObject glassImage_2;
     private void Start()
     {
         backgroundM = GetComponent<AudioSource>();
+        backgroundM.clip = backgroundClip;
+        backgroundM.Play();
+
     }
     public void StartButtonCleckEvent()
     {
+        backgroundM.PlayOneShot(buttonClip, 1f);
+        glassImage.SetActive(true);
         StartCoroutine(StartFadeOut());
     }
 
 
     public void EixtButtonCleckEvent()
     {
+        backgroundM.PlayOneShot(buttonClip, 1f);
+        glassImage_2.SetActive(true);
         StartCoroutine(EixtFadeOut());
     }
 
 
     IEnumerator StartFadeOut()
     {
+        yield return new WaitForSeconds(0.8f);
         if(fadePanel != null)
         {
             while (fadevalue < 1f)
@@ -45,6 +57,7 @@ public class TitleUIManager : MonoBehaviour
 
     IEnumerator EixtFadeOut()
     {
+        yield return new WaitForSeconds(0.8f);
         if (fadePanel != null)
         {
             while (fadevalue < 1f)

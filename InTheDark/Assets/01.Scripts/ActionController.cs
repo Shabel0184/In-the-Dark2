@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class ActionController : MonoBehaviour
 {
     [SerializeField]
+     QuickSlotController QuickSlotController;
+
+    [SerializeField]
     float range; //아이템 습득이 가능한 최대 거리
     bool pickupActivated = false; //아이템 습득 가능할 시 true
     RaycastHit hitInfo; // 충돌체 정보 저장
@@ -25,101 +28,86 @@ public class ActionController : MonoBehaviour
 
     int isDarwer = 0;
 
-    //인벤토리
-    [SerializeField] private UI_Inventory uiinventory;
-    private InventoryItem inventoryItem;
-    
 
-    
-    /*
-    private void Awake()
-    {
-        inventoryItem = new InventoryItem();
-        //아이템 UI에 전달
-        uiinventory.SetInventory(inventoryItem); 
-    }
-
-    */
-
-    void Update()
-    {
-        CheckItem();
-        //TryAction();
-    }
-
-    void TryAction()
-    {
-        if (Input.GetKeyUp(KeyCode.E))
+        void Update()
         {
             CheckItem();
-            CanPickUp();
+           
         }
-    }
 
-    void CheckItem()
-    {
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, _layerMask))
+        void CheckItem()
         {
-            if (hitInfo.transform.tag == "ITEM")
+            if (Physics.Raycast(transform.position, transform.forward, out hitInfo, range, _layerMask))
             {
-                ItemInfoAppear();
-                if (Input.GetKeyUp(KeyCode.E))
+                if (hitInfo.transform.tag == "ITEM")
                 {
-                    //CheckItem();
-                    CanPickUp();
+                    ItemInfoAppear();
+                    if (Input.GetKeyUp(KeyCode.E))
+                    {
+                        CanPickUp();
+                    }
                 }
-            }
-            else if (hitInfo.transform.tag == "DRAWERS")
-            {
-                Debug.Log("서랍 충돌");
-                DrawerAppear();
-                if (Input.GetKeyUp(KeyCode.E))
+                else if (hitInfo.transform.tag == "DRAWERS")
                 {
-                    Debug.Log("서랍 열기 키 누름");
-                    hitInfo.collider.GetComponent<DrawerCheck>().OpenClose();
-                    
+                    Debug.Log("서랍 충돌");
+                    DrawerAppear();
+                    if (Input.GetKeyUp(KeyCode.E))
+                    {
+                        Debug.Log("서랍 열기 키 누름");
+                        hitInfo.collider.GetComponent<DrawerCheck>().OpenClose();
+
+                    }
                 }
+
             }
-
-        }
-        else
-        {
-            ItemInfoDisappear();
-        }
-    }
-
-    void ItemInfoAppear()
-    {
-        pickupActivated = true;
-        actionText.gameObject.SetActive(true);
-        actionText.text = hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "획득" + "<color=yellow>" + "(E)" + "</color>";
-    }
-    void DrawerAppear()
-    {
-        pickupActivated = true;
-        actionText.gameObject.SetActive(true);
-        actionText.text = "열기" + "<color=yellow>" + "(E)" + "</color>";
-    }
-
-    void ItemInfoDisappear()
-    {
-        pickupActivated = false;
-        actionText.gameObject.SetActive(false);
-    }
-
-    void CanPickUp()
-    {
-        if (pickupActivated)
-        {
-            if (hitInfo.transform != null)
+            else
             {
-                Debug.Log(hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + " 획득 했습니다."); //퀵슬롯에 넣기
-                Destroy(hitInfo.transform.gameObject);
                 ItemInfoDisappear();
             }
         }
+
+        void ItemInfoAppear()
+        {
+            pickupActivated = true;
+            actionText.gameObject.SetActive(true);
+            //actionText.text = hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + "획득" + "<color=yellow>" + "(E)" + "</color>";
+        }
+        void DrawerAppear()
+        {
+            pickupActivated = true;
+            actionText.gameObject.SetActive(true);
+            actionText.text = "열기" + "<color=yellow>" + "(E)" + "</color>";
+        }
+
+        void ItemInfoDisappear()
+        {
+            pickupActivated = false;
+            actionText.gameObject.SetActive(false);
+        }
+
+        void CanPickUp()
+        {
+            if (pickupActivated)
+            {
+                if (hitInfo.transform != null)
+                {
+                    //Debug.Log(hitInfo.transform.GetComponent<ItemPickUp>().item.itemName + " 획득 했습니다."); //퀵슬롯에 넣기
+                    if(hitInfo.transform.tag == "ITEM")
+                    {
+                        Destroy(hitInfo.transform.gameObject);
+                        ItemInfoDisappear();
+                    }
+                   
+
+                }
+                QuickSlotController.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
+            }
+
+        }
+
+
+
+
+
     }
 
-
-
-}

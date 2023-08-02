@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class amulet : MonoBehaviour
 {
+    
     public GameObject amulets;
     public GameObject enemy;
     //MoveAgent moveAgent;
@@ -15,7 +16,7 @@ public class amulet : MonoBehaviour
     bool stun;
     void Start()
     {
-        
+           
     }
 
     

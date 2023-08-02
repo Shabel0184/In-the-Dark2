@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject trapPrefab;
     public int maxPool = 5;
     public List<GameObject> trapPool = new List<GameObject>();
-
+    public Transform camPos;
     
     
     void Awake()
@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        camPos = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
     }
     private void Start()
     {
