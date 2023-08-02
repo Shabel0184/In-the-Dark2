@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a735e7d5dfde80240adf973e9667b5f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 92b3be449b2ecde4492a8437a196e6c1, type: 3}
   m_Name: Mirror
   m_EditorClassIdentifier: 
   itemName: Mirror
-  itemImage: {fileID: 21300000, guid: bfd7f2d02bcb369458540a3a6e2cea7f, type: 3}
-  PlayerType: 1
+  itemType: 0
+  itemImage: {fileID: 21300000, guid: adb2d59244fd72a48873f762614858ea, type: 3}
+  itemPrefab: {fileID: 8441492348122734469, guid: 93b96abab8458b9408c6de1100712164, type: 3}

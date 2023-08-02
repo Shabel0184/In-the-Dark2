@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
@@ -29,7 +30,7 @@ public class Slot : MonoBehaviour
         itemCount = _count;
         itemImage.sprite = item.itemImage;
 
-        if(item.itemType != Item.ItemType.Equipment)
+        if(item.itemType != Item.ItemType.Exititem)
         {
             go_CountImage.SetActive(true);
             text_Count.text = itemCount.ToString();
@@ -66,5 +67,5 @@ public class Slot : MonoBehaviour
         go_CountImage.SetActive(false);
     }
 
-
+    
 }

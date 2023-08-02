@@ -19,8 +19,8 @@ public class firecracker : MonoBehaviour
 
     bool throwready; //던질 수 있는지 확인
     Rigidbody rb;
-
-
+    QuickSlotController controller;
+    
     private void Start()
     {
         particle = GetComponentInChildren<ParticleSystem>();
@@ -30,16 +30,10 @@ public class firecracker : MonoBehaviour
     }
     void Update()
     {
-        /*
-        if(Input.GetKeyUp(KeyCode.E)&&throwready)
+        if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            if (!particle.isPlaying)
-            {
-                particle.Play();
-                Throw();
-            }
-            
-        }*/
+            fireUseItem();
+        }
     }
     void Throw()
     {
@@ -60,7 +54,12 @@ public class firecracker : MonoBehaviour
     {
         throwready = true;
     }
-
-
-   
+    public void fireUseItem()
+    {
+        if (!particle.isPlaying && throwready)
+        {
+            particle.Play();
+            Throw();
+        }
+    }
 }

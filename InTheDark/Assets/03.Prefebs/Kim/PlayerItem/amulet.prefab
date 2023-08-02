@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2832379292662928554}
   - component: {fileID: 3105940207745802621}
   - component: {fileID: 586022592483363912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Box065
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,11 +107,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1390421539637273208}
-  - component: {fileID: 1689710528}
   - component: {fileID: 1689710529}
-  m_Layer: 0
+  - component: {fileID: 378242609048239152}
+  - component: {fileID: 7447224580800884076}
+  m_Layer: 6
   m_Name: amulet
-  m_TagString: Untagged
+  m_TagString: ITEM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,23 +133,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1689710528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729406079425706178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcda065cab0f51d4cb40484926cb2c57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amulets: {fileID: 1729406079425706178}
-  enemy: {fileID: 0}
-  laymask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!65 &1689710529
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -162,6 +146,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 6, z: 3}
   m_Center: {x: 0, y: -3, z: 0}
+--- !u!114 &378242609048239152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729406079425706178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71363915981ff44e9458669a14061d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: db9900f0890603e479b41ec8e003042c, type: 2}
+--- !u!114 &7447224580800884076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729406079425706178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30acd96b0ec93b74a9a8863b37910515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amulets: {fileID: 1729406079425706178}
+  enemy: {fileID: 3725906342415600743, guid: 6e40d4a5a2cb7ee4bbfddf75d3d81649, type: 3}
+  laymask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &5616039765794556576
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 315604390534129900}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dummy138
   m_TagString: Untagged
   m_Icon: {fileID: 0}

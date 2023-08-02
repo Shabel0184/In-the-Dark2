@@ -22,7 +22,7 @@ public class mirror : MonoBehaviour
 
     void Update()
     {
-      if(Input.GetButtonDown("1") && CompareTag("Mirror"))
+      if(Input.GetKeyDown(KeyCode.F) && CompareTag("Mirror"))
       { 
             //랜덤스폰 호출
             SpwanPoints(); 

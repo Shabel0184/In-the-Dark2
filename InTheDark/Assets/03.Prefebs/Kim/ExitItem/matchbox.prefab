@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 4140490637650983992}
   - component: {fileID: 1070205079275664285}
   - component: {fileID: 2972048720643458903}
-  m_Layer: 0
+  - component: {fileID: 3532672285213453925}
+  - component: {fileID: 6376522562973970396}
+  m_Layer: 6
   m_Name: matchbox
   m_TagString: ITEM
   m_Icon: {fileID: 0}
@@ -83,3 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3532672285213453925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620378294961317506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71363915981ff44e9458669a14061d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: f9bb6fa13d0d96a4197e059ed4680659, type: 2}
+--- !u!65 &6376522562973970396
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3620378294961317506}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0931737, y: 0.57333845, z: 0.18815672}
+  m_Center: {x: -0.11247811, y: 0, z: 0.09407836}
