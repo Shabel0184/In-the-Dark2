@@ -6,7 +6,7 @@ public class firecracker : MonoBehaviour
 {
     public GameObject fire;
     public ParticleSystem particle;
-
+    Item item;
     public Transform cam;
 
 
@@ -37,6 +37,7 @@ public class firecracker : MonoBehaviour
             transform.rotation = cam.rotation;
             particle.Play();
             Throw();
+            
         }
         Destroy(this.gameObject,9f);
 
@@ -47,7 +48,7 @@ public class firecracker : MonoBehaviour
         throwready = false;
 
         //던질 오브젝트 생성
-        //GameObject firecracker = Instantiate(fire,player.position,cam.rotation);
+        //GameObject firecracker = Instantiate(fire);
 
         //보고있는 방향으로 던지기
         Vector3 force = (cam.transform.forward * throwForce) + (transform.up * throwTorque);

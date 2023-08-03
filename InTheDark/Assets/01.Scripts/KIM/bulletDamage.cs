@@ -5,22 +5,34 @@ using UnityEngine;
 //enemy와 탈출할 천에 넣어둬야함
 public class bulletDamage : MonoBehaviour
 {
-    MoveAgent moveAgent;
-    public GameObject Particle;
-    
+    EnemyAI enemyAI;
+    public GameObject Particle;//천 타고있을때 쓰는 파티클
+    flarebullet flarebullet;
+
     void Start()
     {
-        moveAgent = GetComponent<MoveAgent>();
+        flarebullet = GetComponent<flarebullet>();
     }
 
+    private void Update()
+    {
+        
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("BULLET") )
+        if(collision.collider.CompareTag("ENEMY") )
         {
-            Destroyfabric();
+            enemyAI = collision.collider.GetComponent<EnemyAI>();
             StartCoroutine(StunEnemy());
         }
+        else if (collision.collider.CompareTag("OBSTACLE"))
+        {
+            flarebullet.rb.velocity = Vector3.zero;
+            flarebullet.rb.useGravity = true;
+            flarebullet.a = 1;
+        }
+        
     }
 
     //천 제거
@@ -34,12 +46,14 @@ public class bulletDamage : MonoBehaviour
     //적 스턴
     IEnumerator StunEnemy()
     {
-        GameObject enemy = GameObject.FindGameObjectWithTag("ENEMY");
-        if(enemy != null )
+       
+        if(enemyAI != null )
         {
-            moveAgent.Stop();
+            enemyAI.isStun = 1;
         }
-        
+        flarebullet.rb.velocity = Vector3.zero;
+        flarebullet.rb.useGravity = true;
+        flarebullet.a = 1;
         yield return new WaitForSeconds(3f);
     }
 }

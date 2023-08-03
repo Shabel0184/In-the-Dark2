@@ -149,7 +149,7 @@ public class EnemyAI : MonoBehaviour
                 state = State.LISTEN;
                 isListen = 1;
             }
-            else if(isTrapping > 0)
+            else if(isStun < 1 && isTrapping > 0)
             {
                 state = State.TRACE;
                 yield return new WaitForSeconds(2f);

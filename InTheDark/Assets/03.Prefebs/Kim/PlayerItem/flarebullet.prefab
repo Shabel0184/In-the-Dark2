@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6765887392648882123}
   - component: {fileID: 6765887392641722803}
   - component: {fileID: 6765887392641078369}
+  - component: {fileID: 5539653389225763773}
   m_Layer: 0
   m_Name: flarebullet
   m_TagString: ITEM
@@ -31,14 +32,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6765887392656836905}
-  m_LocalRotation: {x: -0.33004373, y: -0.86726975, z: 0.18466964, w: 0.3237461}
-  m_LocalPosition: {x: -15.31, y: 1.57, z: -13.3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 6.12, y: -136.578, z: 44.108}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &6765887392652249739
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 10
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -83,6 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flareTimer: 9
   flareBurningSound: {fileID: 8300000, guid: 0ed0d71c3db32c64aa047c6dc5794514, type: 3}
+  bulletprefab: {fileID: 0}
 --- !u!108 &6765887392650855435
 Light:
   m_ObjectHideFlags: 0
@@ -5008,3 +5010,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5539653389225763773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6765887392656836905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b10c11b49f76b564eb633a6cb4431daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Particle: {fileID: 0}

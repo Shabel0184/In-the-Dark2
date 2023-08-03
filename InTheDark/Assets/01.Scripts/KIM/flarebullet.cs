@@ -11,10 +11,15 @@ public class flarebullet : MonoBehaviour {
 	private float smooth = 2.4f;
 	public 	float flareTimer = 9;
 	public AudioClip flareBurningSound;
+    float bulletspeed = 3000f;
 
+	public GameObject bulletprefab;
 
-	// Use this for initialization
-	void Start () {
+	public Rigidbody rb;
+	public int a = 0;
+
+    // Use this for initialization
+    void Start () {
 
 		StartCoroutine("flareLightoff");
 		
@@ -26,7 +31,7 @@ public class flarebullet : MonoBehaviour {
 		
 		Destroy(gameObject,flareTimer + 1f);
 		
-	
+		rb= GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -49,7 +54,10 @@ public class flarebullet : MonoBehaviour {
 
 		}
 
-			
+		if (a < 1)
+		{
+			rb.velocity = transform.forward * bulletspeed * Time.deltaTime;
+		}
 	}
 	
 	IEnumerator flareLightoff()

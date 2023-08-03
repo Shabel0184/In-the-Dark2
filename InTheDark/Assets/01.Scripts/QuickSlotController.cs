@@ -8,8 +8,10 @@ public class QuickSlotController : MonoBehaviour
 {
     [SerializeField] Slot[] quickSlots; // Äü½½·Ôµé
     [SerializeField] Transform tf_parent; // Äü½½·ÔµéÀÇ ºÎ¸ð ¿ÀºêÁ§Æ®
+    public GameObject flaregun;
+    int itemIndex;
+    bool itemUse;
 
-   
     public Item selectItem;
 
     public int selectedSlot; // ¼±ÅÃµÈ Äü½½·ÔÀÇ ÀÎµ¦½º
@@ -35,56 +37,115 @@ public class QuickSlotController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1) && itemUseing < 1)
         {
             
-            StartCoroutine(_Useitem(0));
+            StartCoroutine(_Useitem2(0));
         }
             
         else if (Input.GetKeyDown(KeyCode.Alpha2) && itemUseing < 1)
         {
-            StartCoroutine(_Useitem(1));
+            StartCoroutine(_Useitem2(1));
             ChangeSlot(1);
         }
             
         else if (Input.GetKeyDown(KeyCode.Alpha3) && itemUseing < 1)
         {
-            StartCoroutine(_Useitem(2));
+            StartCoroutine(_Useitem2(2));
             ChangeSlot(2);
         }
             
         else if (Input.GetKeyDown(KeyCode.Alpha4) && itemUseing < 1)
         {
-            StartCoroutine(_Useitem(3));
+            StartCoroutine(_Useitem2(3));
             ChangeSlot(3);
         }
             
         else if (Input.GetKeyDown(KeyCode.Alpha5) && itemUseing < 1)
         {
-            StartCoroutine(_Useitem(4));
+            StartCoroutine(_Useitem2(4));
             ChangeSlot(4);
         }
             
         else if (Input.GetKeyDown(KeyCode.Alpha6) && itemUseing < 1)
         {
-            StartCoroutine(_Useitem(5));
+            StartCoroutine(_Useitem2(5));
             ChangeSlot(5);
         }
             
     }
-    IEnumerator _Useitem(int num)
+    /*IEnumerator _Useitem(int num)
     {
         itemUseing = 1;
 
         selectItem = quickSlots[num].item;
         if (quickSlots[num].itemUse())
         {
-            GameObject _item = Instantiate(selectItem.itemPrefab);
-            yield return new WaitForSeconds(1f);
-            itemUseing = 0;
+            if(selectItem.itemName == "firecracker")
+            {
+                 GameObject _item = Instantiate(selectItem.itemPrefab);
+                 yield return new WaitForSeconds(1f);
+                 itemUseing = 0;
+            }
+            else
+            {
+                GameObject _item = Instantiate(selectItem.itemPrefab);
+                Destroy(gameObject);
+            }
+            
         }
         else
         {
             yield return null;
         }
+    }*/
+
+
+
+
+    IEnumerator _Useitem2(int num)
+    {
+        if (quickSlots[num] != null)
+        {
+            itemUseing = 1;
+            selectItem = quickSlots[num].item;
+            quickSlots[num].itemUse2(out itemIndex, out itemUse);
+            if (itemUse)
+            {
+                switch (itemIndex)
+                {
+                    case 0:
+                        GameObject _item = Instantiate(selectItem.itemPrefab);
+                        yield return new WaitForSeconds(1f);
+                        itemUseing = 0;
+                        //estroy( _item );
+                        break;
+                    case 1:
+                        _item = Instantiate(selectItem.itemPrefab);
+                        yield return new WaitForSeconds(1f);
+                        itemUseing = 0;
+                        break;
+                    case 2:
+                        flaregun.SetActive(true);
+                        itemUseing = 0;
+                        break;
+                    case 3:
+                        _item = Instantiate(selectItem.itemPrefab);
+                        yield return new WaitForSeconds(1f);
+                        itemUseing = 0;
+                        Destroy(_item );
+                        break;
+                    default:
+                        itemUseing = 0;
+                        break;
+                }
+
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+        yield return null;
     }
+
 
 
     void ChangeSlot(int _num)

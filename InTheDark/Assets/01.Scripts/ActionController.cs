@@ -32,7 +32,6 @@ public class ActionController : MonoBehaviour
         void Update()
         {
             CheckItem();
-           
         }
 
         void CheckItem()

@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> trapPool = new List<GameObject>();
     public Transform camPos;
     
-    
     void Awake()
     {
         if(instance == null)
@@ -25,6 +24,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         camPos = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        
     }
     private void Start()
     {

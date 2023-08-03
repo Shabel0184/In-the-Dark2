@@ -6,50 +6,37 @@ using UnityEngine;
 public class amulet : MonoBehaviour
 {
     
-    public GameObject amulets;
-    public GameObject enemy;
-    //MoveAgent moveAgent;
-    EnemyAI enemyAI;
-    public LayerMask laymask;// 레이어 저장
-    
+    //public EnemyAI enemyAI;
+    public int laymask;// 레이어 저장
+    public Collider[] coll;
 
-    bool stun;
+    Transform Cam;
+
+    private void Awake()
+    {
+        laymask = LayerMask.NameToLayer("ENEMY");
+        Cam = GameManager.instance.camPos;
+        transform.position = Cam.position;
+    }
     void Start()
     {
-           
+        StartCoroutine(Stun());
+       
     }
 
-    
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            //moveAgent = other.GetComponent<MoveAgent>();
-            enemyAI = other.GetComponent<EnemyAI>();
-            StartCoroutine(Stun());
-        }
-    }
 
     IEnumerator Stun()
     {
+        yield return null;
+        coll = Physics.OverlapSphere(transform.position, 10f,  1 << laymask);
         
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit rayhit;
 
-        if(Physics.Raycast(ray, out rayhit,10,laymask))
+        if(coll != null )
         {
-            if (rayhit.collider.CompareTag("ENEMY"))
-            {
-                //moveAgent.Stop();
-                enemyAI.isStun = 1;
-            }
-            
+            EnemyAI enemyAI = coll[0].GetComponent<EnemyAI>();
+            enemyAI.isStun = 1;
         }
+       
       
         yield return new WaitForSecondsRealtime(3f);
 

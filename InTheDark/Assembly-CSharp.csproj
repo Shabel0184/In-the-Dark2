@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\01.Scripts\IM\Enemy\EnemyAI.cs" />
-    <Compile Include="Assets\01.Scripts\KIM\ItemEffect.cs" />
     <Compile Include="Assets\01.Scripts\KIM\ItemSpawn.cs" />
     <Compile Include="Assets\01.Scripts\DrawerCheck.cs" />
     <Compile Include="Assets\01.Scripts\KIM\Gunflare.cs" />
@@ -99,10 +98,8 @@
     <Compile Include="Assets\01.Scripts\KIM\mirror.cs" />
     <Compile Include="Assets\01.Scripts\Slot.cs" />
     <Compile Include="Assets\01.Scripts\IM\MyGizmo.cs" />
-    <Compile Include="Assets\01.Scripts\KIM\FirecrakerEffect.cs" />
     <Compile Include="Assets\01.Scripts\KIM\flarebullet.cs" />
     <Compile Include="Assets\01.Scripts\IM\PlayerDie.cs" />
-    <Compile Include="Assets\01.Scripts\KIM\ItemAsset.cs" />
     <Compile Include="Assets\01.Scripts\Item.cs" />
   </ItemGroup>
   <ItemGroup>

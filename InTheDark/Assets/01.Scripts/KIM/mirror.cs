@@ -7,32 +7,29 @@ using UnityEngine.UI;
 public class mirror : MonoBehaviour
 {
 
-    public GameObject player;
+    public Transform player;
     public GameObject _mirror;
     public Image image;
     Color color;
 
+    bool isused = false;
     private void Start()
     {
         color = Color.white;
         color.a = 0f;
         image = GetComponentInChildren<Image>();
         image.color = color;
-    }
 
-    void Update()
-    {
-      if(Input.GetKeyDown(KeyCode.F) && CompareTag("Mirror"))
-      { 
+        player = GameManager.instance.camPos.transform.parent.gameObject.transform;
+        if (!isused)
+        {
             //랜덤스폰 호출
-            SpwanPoints(); 
+            SpwanPoints();
             //페이드인 코루틴 호출
-            StartCoroutine(FadeIn()); 
-           
-      }
-       
+            StartCoroutine(FadeIn());
+        }
     }
-
+    
 
     //플레이어 스폰 포인트에서 랜덤 스폰
     void SpwanPoints()

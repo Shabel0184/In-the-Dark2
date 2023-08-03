@@ -32,7 +32,7 @@ public class Slot : MonoBehaviour
         itemCount = _count;
         itemImage.sprite = item.itemImage;
 
-        if (item.itemType != Item.ItemType.Exititem)
+        if (item.itemType == Item.ItemType.PlayerItem || item.itemType == Item.ItemType.Exititem)
         {
             go_CountImage.SetActive(true);
             text_Count.text = itemCount.ToString();
@@ -95,6 +95,108 @@ public class Slot : MonoBehaviour
             ClearSlot();
             return false;
         }
+    }
+
+
+   
+    public void itemUse2(out int index, out bool _itemUse)
+    {
+
+        index = 0;
+        _itemUse = false;
+
+        if (item != null && itemCount > 0 && item.itemType != Item.ItemType.Exititem) 
+        {
+           
+
+            switch (item.itemName)
+            {
+                case "Amulet":
+                    index = 0;
+                    _itemUse = true;
+                    break;
+                case "firecracker":
+                    index = 1;
+                    _itemUse = true;
+                    break;
+                case "FlareGun":
+                    index = 2;
+                    _itemUse = true;
+                    break;
+                case "Mirror":
+                    index = 3;
+                    _itemUse = true;
+                    break;
+
+            } 
+            itemCount--;
+            if (itemCount == 0)
+            {
+                ClearSlot();
+            }
+            text_Count.text = itemCount.ToString();
+        }
+        else if (item != null && itemCount > 0 && item.itemType == Item.ItemType.Exititem)
+        {
+            switch (item.itemName) 
+            {
+                case "airtank":
+                    GameObject _item = Instantiate(item.itemPrefab, GameManager.instance.camPos);
+                    /*Item i = _item.GetComponent<Item>();
+                    if (i.exititemUse > 0)
+                    {
+                        ClearSlot();
+                        Destroy(_item.gameObject);
+                        
+                    }
+                    else
+                    {
+                        Destroy(_item.gameObject, 0.1f);
+                        
+                    }*/
+                    if(_item.GetComponent<ItemPickUp>().item.exititemUse > 0)
+                    {
+                        ClearSlot();
+                    }
+                    Destroy(_item.gameObject, 0.1f);
+                    index = 5;
+                    _itemUse = true;
+                    break;
+                case "Book":
+                    index = 5;
+                    _itemUse = true;
+                    break;
+                case "CarKey":
+                    index = 5;
+                    _itemUse = true;
+                    break;
+                case "DoorHandle":
+                    index = 5;
+                    _itemUse = true;
+                    break;
+                case "FlashLight":
+                    index = 5;
+                    _itemUse = true;
+                    break;
+                case "Fuelttank":
+                    index = 5;
+                    _itemUse = true;
+                    break;
+                case "MatchBox":
+                    index = 5;
+                    _itemUse = true;
+                    break;
+                
+            }
+        }
+        else
+        {
+            index = 5;
+            _itemUse = true;
+        }
+
+
+
     }
 
     // 해당 슬롯 하나 삭제
