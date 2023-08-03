@@ -68,7 +68,9 @@
     <Compile Include="Assets\09.ImportAssets\Free HDR Skyboxes Pack\Example Scenes\Script\RotateCamera.cs" />
     <Compile Include="Assets\01.Scripts\Inventory.cs" />
     <Compile Include="Assets\01.Scripts\IM\Enemy\SpawnTrigger.cs" />
+    <Compile Include="Assets\01.Scripts\IM\TutorialSceneTrigger.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\Trap.cs" />
+    <Compile Include="Assets\01.Scripts\IM\UIManager.cs" />
     <Compile Include="Assets\01.Scripts\QuickSlotController.cs" />
     <Compile Include="Assets\01.Scripts\RotateToMouse.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\Door.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Assets\01.Scripts\PlayerMove.cs" />
     <Compile Include="Assets\01.Scripts\KIM\DoorRotate.cs" />
     <Compile Include="Assets\01.Scripts\IM\Item\amulet.cs" />
+    <Compile Include="Assets\01.Scripts\IM\GostSelect.cs" />
     <Compile Include="Assets\01.Scripts\KIM\light.cs" />
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\Example\Utility\DisableOnPlay.cs" />
     <Compile Include="Assets\09.ImportAssets\2\UI pack\Scripts\FillValueNumber.cs" />
@@ -101,9 +104,6 @@
     <Compile Include="Assets\01.Scripts\IM\PlayerDie.cs" />
     <Compile Include="Assets\01.Scripts\KIM\ItemAsset.cs" />
     <Compile Include="Assets\01.Scripts\Item.cs" />
-    <Compile Include="Assets\01.Scripts\IM\UIManager.cs" />
-    <Compile Include="Assets\01.Scripts\IM\TutorialSceneTrigger.cs" />
-    <Compile Include="Assets\01.Scripts\IM\GostSelect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.Models\Kim\Smartphone\StandardColorMask.shader" />

@@ -18,7 +18,7 @@ public class PuzzleDoor : MonoBehaviour
         anim.SetBool("Open", false);
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         Text.text = codeValue;
