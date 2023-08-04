@@ -71,34 +71,7 @@ public class QuickSlotController : MonoBehaviour
         }
             
     }
-    /*IEnumerator _Useitem(int num)
-    {
-        itemUseing = 1;
-
-        selectItem = quickSlots[num].item;
-        if (quickSlots[num].itemUse())
-        {
-            if(selectItem.itemName == "firecracker")
-            {
-                 GameObject _item = Instantiate(selectItem.itemPrefab);
-                 yield return new WaitForSeconds(1f);
-                 itemUseing = 0;
-            }
-            else
-            {
-                GameObject _item = Instantiate(selectItem.itemPrefab);
-                Destroy(gameObject);
-            }
-            
-        }
-        else
-        {
-            yield return null;
-        }
-    }*/
-
-
-
+    
 
     IEnumerator _Useitem2(int num)
     {
@@ -109,13 +82,13 @@ public class QuickSlotController : MonoBehaviour
             quickSlots[num].itemUse2(out itemIndex, out itemUse);
             if (itemUse)
             {
+                GameObject _item;
                 switch (itemIndex)
                 {
                     case 0:
-                        GameObject _item = Instantiate(selectItem.itemPrefab);
+                         _item = Instantiate(selectItem.itemPrefab);
                         yield return new WaitForSeconds(1f);
                         itemUseing = 0;
-                        //estroy( _item );
                         break;
                     case 1:
                         _item = Instantiate(selectItem.itemPrefab);

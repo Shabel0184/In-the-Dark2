@@ -6,10 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Item", menuName = "Item/newitem")]
 public class Item : ScriptableObject // 게임 오브젝트에 붙일 필요 x
 {
-    private void Awake()
-    {
-        exititemUse = 0;
-    }
+    
     public enum ItemType // 아이템 유형
     {
         PlayerItem,

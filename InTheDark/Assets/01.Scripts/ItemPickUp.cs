@@ -6,4 +6,9 @@ public class ItemPickUp : MonoBehaviour
 {
     public Item item;
 
+    private void Awake()
+    {
+        item.exititemUse = 0;
+    }
+
 }

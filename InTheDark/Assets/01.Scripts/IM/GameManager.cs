@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public int maxPool = 5;
     public List<GameObject> trapPool = new List<GameObject>();
     public Transform camPos;
+    public GameObject[] exititems;
+    public List<GameObject> exitpools = new List<GameObject>();
     
     void Awake()
     {
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         CreatTrapPooling();
+        CreateExitOBJ();
         
     }
 
@@ -43,6 +46,20 @@ public class GameManager : MonoBehaviour
             obj.SetActive(false);
             trapPool.Add(obj);
         }
+    }
+
+    public void CreateExitOBJ()
+    {
+        GameObject ExitItemPools = new GameObject("ExitItemPools");
+        for(int i = 0; i <exititems.Length; i++)
+        {
+            var obj = Instantiate<GameObject>(exititems[i], ExitItemPools.transform);
+            obj.name = exititems[i].ToString();
+            obj.SetActive(false);
+            exitpools.Add(obj);
+
+        }
+
     }
 
     //오브젝트 풀의 오브젝트 넘기는? 함수
