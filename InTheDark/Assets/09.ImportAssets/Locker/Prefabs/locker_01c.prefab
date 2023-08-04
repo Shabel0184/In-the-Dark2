@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 6400000}
+  - component: {fileID: 1319097918}
+  - component: {fileID: 1230264065961309485}
   m_Layer: 0
   m_Name: locker_01c
   m_TagString: Untagged
@@ -125,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 13.209, y: -0.504, z: -3.704}
-  m_LocalScale: {x: 2, y: 2, z: 1.8000004}
+  m_LocalScale: {x: 3, y: 2, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6835066721426336003}
@@ -196,6 +198,32 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: f8a4903bf11aefb4f8358b11034c57cc, type: 3}
+--- !u!65 &1319097918
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7054806, y: 1.8353457, z: 0.6205851}
+  m_Center: {x: 2.793197e-18, y: 0.9176729, z: 0.014150957}
+--- !u!114 &1230264065961309485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044fce524e3478e4bb4344097204611d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDuration: 1
 --- !u!1 &6950644117759100333
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,5 +319,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044fce524e3478e4bb4344097204611d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorOffset: {x: 0, y: 0, z: 0}
   moveDuration: 1

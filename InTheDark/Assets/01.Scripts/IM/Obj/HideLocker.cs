@@ -7,8 +7,8 @@ public class HideLocker : MonoBehaviour
 {
     int isHide = 0;
     
-    public Vector3 doorOffset;
-    DoorRotate door;
+    
+   
     Rigidbody rb;
     
     public float moveDuration = 1f; // 이동에 걸리는 시간
@@ -20,32 +20,70 @@ public class HideLocker : MonoBehaviour
     }
     private void Start()
     {
-        door = GetComponent<DoorRotate>();
+        
         rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
     }
 
-   
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("HideIn / 0 -> 1");
+
+            rb.isKinematic = true;
+
+
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("HideOut -> 0");
+            rb.isKinematic = false;
+
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            Debug.Log("HideOut -> 0");
+            rb.isKinematic = false;
+           
+        }
+       
+    }
+   /* private void OnTriggerStay(Collider other)
     {
         if (isHide < 1 && other.CompareTag("Player") && Input.GetKeyUp(KeyCode.F))
         {
             Debug.Log("HideIn / 0 -> 1");
             isHide = 1;
-            StartCoroutine(HideDoor(other));
+            rb.isKinematic = true;
+            door.DoorOpen();
 
         }
         else if (isHide > 0 && other.CompareTag("Player") && Input.GetKeyUp(KeyCode.F))
         {
             Debug.Log("HideOut -> 0");
             isHide = 0;
-            StartCoroutine(HideDoor(other));
+            rb.isKinematic = false;
+            door.DoorOpen();
 
+        }
+        else
+        {
+            door.DoorClose();
         }
        
     }
-
-    IEnumerator HideDoor(Collider playerCollider)
+*/
+    /*IEnumerator HideDoor(Collider playerCollider)
     {
         //캐비닛 상호작용 중
 
@@ -69,5 +107,5 @@ public class HideLocker : MonoBehaviour
                 
                 break;
         }
-    }
+    }*/
 }

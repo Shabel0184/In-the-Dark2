@@ -10,8 +10,11 @@ public class PuzzleDoor : MonoBehaviour
     [SerializeField] private Text Text;
     string codeValue = "";
     public string Code;
+    public string Exit;
     public GameObject keypad;
     bool ispanel;
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -22,19 +25,31 @@ public class PuzzleDoor : MonoBehaviour
     void Update()
     {
         Text.text = codeValue;
+
+
         if (codeValue == Code)
         {
             Dooropen();
             keypad.SetActive(false);
+            
+            
         }
-        if (codeValue.Length >= 4)
+        if (codeValue.Length >= 5)
         {
             codeValue = "";
         }
         if (Input.GetKeyDown(KeyCode.E) && ispanel == true)
         {
             keypad.SetActive(true);
+            
         }
+
+        if(codeValue == Exit)
+        {
+            keypad.SetActive(false);
+        }
+        
+        
     }
 
     //¹®¿­¸²
@@ -50,11 +65,11 @@ public class PuzzleDoor : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    /*private void OnCollisionExit(Collision collision)
     {
         ispanel = false;
         keypad.SetActive(false);
-    }
+    }*/
 
 
    

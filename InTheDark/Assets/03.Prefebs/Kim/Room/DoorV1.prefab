@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 7379916647528178964}
   - component: {fileID: 6428522203442468188}
   - component: {fileID: 967028592588427345}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 01_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5630136028166327592
 Transform:
@@ -106,12 +106,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5252526216679687307}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoorV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5252526216679687307
 Transform:
@@ -120,16 +120,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5252526216679332011}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -14.638, y: 4.6899996, z: 31.34}
-  m_LocalScale: {x: 0.99999976, y: 1.15, z: 1.4999993}
+  m_LocalScale: {x: 1, y: 2, z: 2.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2151233808042736022}
   - {fileID: 5132305551905628402}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &7017706862838569406
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,12 +142,12 @@ GameObject:
   - component: {fileID: 563729616540856302}
   - component: {fileID: 4121616379590038440}
   - component: {fileID: 2483700867270546982}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: doorRotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2151233808042736022
 Transform:
@@ -223,12 +223,12 @@ GameObject:
   - component: {fileID: 5132305551905628402}
   - component: {fileID: 6210489296121909134}
   - component: {fileID: 4132192909727765413}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 03_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5132305551905628402
 Transform:

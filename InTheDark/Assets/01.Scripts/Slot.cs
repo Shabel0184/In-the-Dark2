@@ -20,6 +20,12 @@ public class Slot : MonoBehaviour
     GameObject go_CountImage;
     public GameObject a;
 
+    private void Start()
+    {
+        a = transform.GetChild(0).transform.GetChild(0).gameObject;
+    }
+
+
     // 아이템 이미지의 투명도 조절
     void SetColor(float _alpha)
     {
@@ -43,8 +49,8 @@ public class Slot : MonoBehaviour
         else if (item.itemType == Item.ItemType.Exititem)
         {
             go_CountImage.SetActive(true);
-            a = go_CountImage.GetComponentInChildren<Image>().gameObject;
             a.SetActive(false);
+            
         }
         else
         {

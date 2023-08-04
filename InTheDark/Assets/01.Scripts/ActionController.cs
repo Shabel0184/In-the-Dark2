@@ -23,15 +23,18 @@ public class ActionController : MonoBehaviour
     //레이어 마스크 비트 연산
     const int itemLayer = 1 << 6;
     const int drawerLayer = 1 << 20;
+  
     //OR로 두 개의 레이어 
     int _layerMask = itemLayer | drawerLayer;
 
     int isDarwer = 0;
 
+    public GameObject keypad;
 
         void Update()
         {
             CheckItem();
+        OnKeyPad();
         }
 
         void CheckItem()
@@ -102,6 +105,18 @@ public class ActionController : MonoBehaviour
                 QuickSlotController.AcquireItem(hitInfo.transform.GetComponent<ItemPickUp>().item);
             }
 
+        }
+
+        void OnKeyPad()
+        {
+            LayerMask mask = LayerMask.NameToLayer("LockDoor");
+            if (Physics.Raycast(transform.position, transform.forward, out hitInfo, 20,mask))
+            {
+                if (hitInfo.collider.tag == "LockDoor" && Input.GetKeyDown(KeyCode.E))
+                {
+                    keypad.SetActive(true);
+                }
+            }
         }
 
 

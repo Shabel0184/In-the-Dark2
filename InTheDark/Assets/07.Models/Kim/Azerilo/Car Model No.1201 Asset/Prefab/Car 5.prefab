@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4909723815939566}
   - component: {fileID: 33284372730115332}
   - component: {fileID: 23625516670821026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WindowsGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4708528266998968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Car_NO.1201
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 4648848890345938}
   - component: {fileID: 33549953360216398}
   - component: {fileID: 23989908308244692}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Headlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   - component: {fileID: 4287647133558576}
   - component: {fileID: 33215221116640184}
   - component: {fileID: 23346390038673254}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wipers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 4541031376373394}
   - component: {fileID: 33138576881088638}
   - component: {fileID: 23634126146726298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mirrors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -810,7 +810,7 @@ GameObject:
   - component: {fileID: 33478975488659484}
   - component: {fileID: 23767164760796244}
   - component: {fileID: 64602174947935738}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BodyMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,7 +1442,7 @@ GameObject:
   - component: {fileID: 4271351491646010}
   - component: {fileID: 33894060793531742}
   - component: {fileID: 23113486077354528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Steer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1691,7 +1691,7 @@ GameObject:
   - component: {fileID: 4256272531833830}
   - component: {fileID: 33484355962703760}
   - component: {fileID: 23864161026705222}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumpers1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1811,7 +1811,7 @@ GameObject:
   - component: {fileID: 4000268433157478}
   - component: {fileID: 33067610499349194}
   - component: {fileID: 23315427255186592}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bumpers2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +1894,7 @@ GameObject:
   - component: {fileID: 4201377637459628}
   - component: {fileID: 33958732538012992}
   - component: {fileID: 23622425981429322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chassis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1977,7 +1977,7 @@ GameObject:
   - component: {fileID: 4383375520076490}
   - component: {fileID: 33766464716673652}
   - component: {fileID: 23144626111781418}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Seams
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2180,7 +2180,7 @@ GameObject:
   - component: {fileID: 4579824089978580}
   - component: {fileID: 33001672535988518}
   - component: {fileID: 23764637456981482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Metal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2263,7 +2263,7 @@ GameObject:
   - component: {fileID: 4121147746907340}
   - component: {fileID: 33892662885471414}
   - component: {fileID: 23549826860374668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Interior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2678,7 +2678,7 @@ GameObject:
   - component: {fileID: 4560727672014856}
   - component: {fileID: 33456922075265150}
   - component: {fileID: 23647611398972404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Exhaust
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2927,7 +2927,7 @@ GameObject:
   - component: {fileID: 4126490045137058}
   - component: {fileID: 33520925979191166}
   - component: {fileID: 23048991718967702}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lightGlass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3091,7 +3091,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4929018535775754}
-  m_Layer: 0
+  - component: {fileID: 1547441604}
+  - component: {fileID: 1547441602}
+  - component: {fileID: 1547441603}
+  m_Layer: 8
   m_Name: Car 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3118,6 +3121,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1547441604
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780351737568190}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1547441602
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780351737568190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 4.5}
+  m_Center: {x: 0, y: 0.8, z: 0.34}
+--- !u!114 &1547441603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780351737568190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c215ebbe435f77c4995ca0561be43751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carKey: 0
+  book: 0
+  fueltank: 0
 --- !u!1 &1791251313518316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3129,7 +3176,7 @@ GameObject:
   - component: {fileID: 4973643339480206}
   - component: {fileID: 33985199093152152}
   - component: {fileID: 23469257091268824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3249,7 +3296,7 @@ GameObject:
   - component: {fileID: 4232856117291502}
   - component: {fileID: 33828598594034884}
   - component: {fileID: 23567930689539848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3332,7 +3379,7 @@ GameObject:
   - component: {fileID: 4420606481555640}
   - component: {fileID: 33517322893276610}
   - component: {fileID: 23802937489064704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WindowFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3498,7 +3545,7 @@ GameObject:
   - component: {fileID: 4937969888266850}
   - component: {fileID: 33613185646473854}
   - component: {fileID: 23004381108905312}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearLightLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3581,7 +3628,7 @@ GameObject:
   - component: {fileID: 4427100727068380}
   - component: {fileID: 33412940444975520}
   - component: {fileID: 23856456050177934}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RearLightRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
