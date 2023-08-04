@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
-    public Transform cameraTransform;
-    public Camera cam;
+    Transform cameraTransform;
+    
 
-    public float moveSpeed = 2f;
+    float moveSpeed = 5f;
     // 이동 속도
-    public float currStamina = 100;
-    public float maxStamina = 100;
+    float currStamina = 100;
+    float maxStamina = 100;
 
     public bool isPlayerDie = false;
     public bool stun = false;
@@ -28,18 +29,25 @@ public class PlayerMove : MonoBehaviour
 
     bool isRun = false;
 
+    public Slider staminaBar;
+    
 
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rotateToMouse = GetComponentInChildren<RotateToMouse>();
+        staminaBar.value = (currStamina / maxStamina) % 100;
+        StartCoroutine(Stamina());
+        cameraTransform = GetComponentInChildren<Camera>().GetComponent<Transform>();
     }
 
     void FixedUpdate()
     {
         if(isPlayerDie)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             return;
         }
         if (!stun)
@@ -49,6 +57,8 @@ public class PlayerMove : MonoBehaviour
         GetInput();
         FreezeRotation();
         UpdateRotate();
+
+        staminaBar.value = (currStamina / maxStamina) % 100;
     }
 
     void GetInput()
@@ -74,7 +84,7 @@ public class PlayerMove : MonoBehaviour
         moveVec = cameraForward * vAxis + cameraRight * hAxis;
         moveVec.Normalize();
         
-        if (isRun && moveVec.magnitude > 0 && currStamina > 20)
+        if (isRun && moveVec.magnitude > 0 && currStamina > 1)
         {
 
             Debug.Log("스테미너 소모");
@@ -84,11 +94,6 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            if (currStamina < maxStamina)
-            {
-                Debug.Log("스테미너 회복");
-                currStamina += 10 * Time.deltaTime;
-            }
             transform.position += moveVec * moveSpeed * Time.deltaTime;
             
         }
@@ -102,6 +107,27 @@ public class PlayerMove : MonoBehaviour
     void UpdateRotate()
     {
         rotateToMouse.CalculateRotation(mouseX, mouseY);
+    }
+
+
+    //스테미나 회복 
+    IEnumerator Stamina()
+    {
+        while(!isPlayerDie)
+        {
+            if(!isRun)
+            {
+                if(currStamina < maxStamina)
+                { 
+                    currStamina += 5 * Time.deltaTime;
+                }
+            }
+            else
+            {
+                yield return new WaitForSeconds(3f);
+            }
+            yield return null;
+        }
     }
 
 }

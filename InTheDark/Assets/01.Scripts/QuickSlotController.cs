@@ -38,12 +38,14 @@ public class QuickSlotController : MonoBehaviour
         {
             
             StartCoroutine(_Useitem2(0));
+            ChangeSlot(0);
         }
             
         else if (Input.GetKeyDown(KeyCode.Alpha2) && itemUseing < 1)
         {
             StartCoroutine(_Useitem2(1));
             ChangeSlot(1);
+
         }
             
         else if (Input.GetKeyDown(KeyCode.Alpha3) && itemUseing < 1)
@@ -133,6 +135,7 @@ public class QuickSlotController : MonoBehaviour
 
         // 선택된 슬롯으로 이미지 이동
         go_SelectedIamge.transform.position = quickSlots[selectedSlot].transform.position;
+        go_SelectedIamge.SetActive(true);
 
     }
 
