@@ -193,7 +193,7 @@ MeshCollider:
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -206,7 +206,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.7054806, y: 1.8353457, z: 0.6205851}
@@ -236,7 +236,6 @@ GameObject:
   - component: {fileID: 5687245184399181166}
   - component: {fileID: 5011528809374423519}
   - component: {fileID: 211970962796170827}
-  - component: {fileID: 1078843114}
   m_Layer: 0
   m_Name: cabinetRotate
   m_TagString: Untagged
@@ -271,8 +270,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.78584355, y: 1.5, z: 1.2}
-  m_Center: {x: -0.11911396, y: 0, z: 0.75999993}
+  m_Size: {x: 0.8784321, y: 1.4999998, z: 1.200001}
+  m_Center: {x: -0.06499588, y: 0, z: 0.7599997}
 --- !u!114 &5011528809374423519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +279,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6950644117759100333}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e8c230ea55b9a34799c4c2f30cbaa2f, type: 3}
   m_Name: 
@@ -307,16 +306,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1078843114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6950644117759100333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 044fce524e3478e4bb4344097204611d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDuration: 1

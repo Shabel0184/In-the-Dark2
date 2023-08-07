@@ -74,6 +74,7 @@
     <Compile Include="Assets\01.Scripts\RotateToMouse.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\Door.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\CarExitObj.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\DoorExitObj.cs" />
     <Compile Include="Assets\09.ImportAssets\Keypad\Script\Playsound.cs" />
     <Compile Include="Assets\01.Scripts\KIM\KeyPad.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\HideBox.cs" />
@@ -96,17 +97,17 @@
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\SimpleCrosshair.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\Flaregun.cs" />
     <Compile Include="Assets\01.Scripts\KIM\mirror.cs" />
+    <Compile Include="Assets\01.Scripts\IM\PlayerMove.cs" />
     <Compile Include="Assets\01.Scripts\Slot.cs" />
     <Compile Include="Assets\01.Scripts\IM\MyGizmo.cs" />
     <Compile Include="Assets\01.Scripts\KIM\flarebullet.cs" />
     <Compile Include="Assets\01.Scripts\IM\PlayerDie.cs" />
-    <Compile Include="Assets\01.Scripts\Item.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Obj\DoorExitObj.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\WellExitObj.cs" />
-    <Compile Include="Assets\01.Scripts\IM\PlayerMove.cs" />
+    <Compile Include="Assets\01.Scripts\Item.cs" />
+    <Compile Include="Assets\Samples\Recorder\3.0.3\Screenshot Capture Sample\CaptureScreenShotExample.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\DoorOpenObj.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\07.Models\Kim\Smartphone\StandardColorMask.shader" />
     <None Include="Assets\09.ImportAssets\HighQualityBricks&amp;Walls\Shaders\stone-805287.shader" />
     <None Include="Assets\09.ImportAssets\Free HDR Skyboxes Pack\ReadMe.txt" />
     <None Include="Assets\09.ImportAssets\HighQualityBricks&amp;Walls\Shaders\wall-617961.shader" />
@@ -805,6 +806,15 @@
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

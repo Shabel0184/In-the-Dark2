@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2752868848800115777}
   - component: {fileID: 2752868848800115788}
   - component: {fileID: 2752868848800115791}
-  - component: {fileID: 507470734}
+  - component: {fileID: 6948230577446200042}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -117,7 +117,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2752868848800115776}
   m_Enabled: 1
---- !u!114 &507470734
+--- !u!114 &6948230577446200042
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,8 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QuickSlotController: {fileID: 0}
-  range: 50
+  range: 0
   actionText: {fileID: 0}
+  solts: []
 --- !u!1 &3355012464797187100
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,16 +211,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3355012464797187100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d01f811973621b40b4b765b20adec9d, type: 3}
+  m_Script: {fileID: 11500000, guid: a40791094ae65ff419c2198335a202fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 3355012464797187103}
-  cam: {fileID: 0}
-  moveSpeed: 3
-  currStamina: 100
-  maxStamina: 100
   isPlayerDie: 0
   stun: 0
+  staminaBar: {fileID: 0}
 --- !u!114 &3355012464797187296
 MonoBehaviour:
   m_ObjectHideFlags: 0

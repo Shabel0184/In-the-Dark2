@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using Unity.VisualScripting;
+using Cursor = UnityEngine.Cursor;
 
 public class PuzzleDoor : MonoBehaviour
 {
@@ -10,7 +12,6 @@ public class PuzzleDoor : MonoBehaviour
     [SerializeField] private Text Text;
     string codeValue = "";
     public string Code;
-    public string Exit;
     public GameObject keypad;
     bool ispanel;
 
@@ -21,61 +22,76 @@ public class PuzzleDoor : MonoBehaviour
         anim.SetBool("Open", false);
     }
 
-   
     void Update()
     {
         Text.text = codeValue;
 
-
+        if (Input.GetKeyDown(KeyCode.E) && ispanel == true)
+        {
+            keypad.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            
+        }
         if (codeValue == Code)
         {
             Dooropen();
             keypad.SetActive(false);
-            
-            
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         if (codeValue.Length >= 5)
         {
             codeValue = "";
         }
-        if (Input.GetKeyDown(KeyCode.E) && ispanel == true)
-        {
-            keypad.SetActive(true);
-            
-        }
-
-        if(codeValue == Exit)
-        {
-            keypad.SetActive(false);
-        }
+       
+        
+        
         
         
     }
 
-    //¹®¿­¸²
     public void Dooropen()
     {
         anim.SetBool("Open", true);
     }
-    private void OnCollisionEnter(Collision collision)
+
+   /* private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag("Player"))
         {
             ispanel = true;
         }
-    }
-
-    /*private void OnCollisionExit(Collision collision)
-    {
-        ispanel = false;
-        keypad.SetActive(false);
+        
     }*/
 
-
-   
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            ispanel = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            ispanel = false;
+        }
+    }
 
     public void digit(string digit)
     {
         codeValue += digit;
+    }
+
+    public void Exit()
+    {
+        keypad.SetActive(false);
+    }
+
+    public void Clear()
+    {
+        codeValue = " ";
     }
 }

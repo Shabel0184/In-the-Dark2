@@ -330,6 +330,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.PlasticSCM.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Runtime.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Recorder.Base.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Recorder.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Recorder.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Rider.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.ref.dll"
@@ -365,6 +368,7 @@
 "Assets/01.Scripts/IM/Obj/CarExitObj.cs"
 "Assets/01.Scripts/IM/Obj/Door.cs"
 "Assets/01.Scripts/IM/Obj/DoorExitObj.cs"
+"Assets/01.Scripts/IM/Obj/DoorOpenObj.cs"
 "Assets/01.Scripts/IM/Obj/HideBox.cs"
 "Assets/01.Scripts/IM/Obj/HideLocker.cs"
 "Assets/01.Scripts/IM/Obj/Trap.cs"
@@ -398,6 +402,7 @@
 "Assets/09.ImportAssets/2/UI pack/Scripts/FillValueNumber.cs"
 "Assets/09.ImportAssets/Free HDR Skyboxes Pack/Example Scenes/Script/RotateCamera.cs"
 "Assets/09.ImportAssets/Keypad/Script/Playsound.cs"
+"Assets/Samples/Recorder/3.0.3/Screenshot Capture Sample/CaptureScreenShotExample.cs"
 -langversion:9.0
 
 /deterministic

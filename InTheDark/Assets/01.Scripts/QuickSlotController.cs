@@ -6,7 +6,8 @@ using static UnityEditor.Progress;
 
 public class QuickSlotController : MonoBehaviour
 {
-    [SerializeField] Slot[] quickSlots; // Äü½½·Ôµé
+    //[SerializeField] 
+    public Slot[] quickSlots; // Äü½½·Ôµé
     [SerializeField] Transform tf_parent; // Äü½½·ÔµéÀÇ ºÎ¸ð ¿ÀºêÁ§Æ®
     public GameObject flaregun;
     int itemIndex;
@@ -171,6 +172,8 @@ public class QuickSlotController : MonoBehaviour
         {
             if (quickSlots[i].item == null)
             {
+
+
                 quickSlots[i].AddItem(_item, count);
                 notput = false;
                 return;
