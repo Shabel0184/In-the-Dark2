@@ -185,7 +185,10 @@ public class EnemyAI : MonoBehaviour
             {
                 state = State.STUN;
             }
-
+            else if( dist > 90)
+            {
+                moveAgent.Spawn();
+            }
             yield return ws;
         }
 

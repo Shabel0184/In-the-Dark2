@@ -243,14 +243,16 @@ public class Slot : MonoBehaviour
 
     IEnumerator obfalse(GameObject a)
     {
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.1f);
+        yield return null;
         if(a.GetComponent<ItemPickUp>().item.exititemUse > 0)
         {
             //ExitUseing = 1;
             itemCount--;
             ClearSlot();
         }
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.1f);
+        yield return null;
         a.SetActive(false);
 
     }

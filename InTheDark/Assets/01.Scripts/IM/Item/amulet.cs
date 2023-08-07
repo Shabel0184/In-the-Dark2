@@ -31,7 +31,7 @@ public class amulet : MonoBehaviour
         coll = Physics.OverlapSphere(transform.position, 10f,  1 << laymask);
         
 
-        if(coll != null )
+        if(coll.Length > 0)
         {
             EnemyAI enemyAI = coll[0].GetComponent<EnemyAI>();
             enemyAI.isStun = 1;

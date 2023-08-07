@@ -119,7 +119,7 @@ public class PlayerMove : MonoBehaviour
             {
                 if(currStamina < maxStamina)
                 { 
-                    currStamina += 5 * Time.deltaTime;
+                    currStamina += 10 * Time.deltaTime;
                 }
             }
             else

@@ -6,7 +6,8 @@ using static UnityEditor.Progress;
 
 public class QuickSlotController : MonoBehaviour
 {
-    [SerializeField] Slot[] quickSlots; // 퀵슬롯들
+    //[SerializeField]
+    public Slot[] quickSlots; // 퀵슬롯들
     [SerializeField] Transform tf_parent; // 퀵슬롯들의 부모 오브젝트
     public GameObject flaregun;
     int itemIndex;
@@ -130,12 +131,15 @@ public class QuickSlotController : MonoBehaviour
 
     void SelectedSlot(int _num)
     {
-        // 선택된 슬롯
-        selectedSlot = _num;
+        if (quickSlots[_num].item != null)
+        {
+            // 선택된 슬롯
+            selectedSlot = _num;
 
-        // 선택된 슬롯으로 이미지 이동
-        go_SelectedIamge.transform.position = quickSlots[selectedSlot].transform.position;
-        go_SelectedIamge.SetActive(true);
+            // 선택된 슬롯으로 이미지 이동
+            go_SelectedIamge.transform.position = quickSlots[selectedSlot].transform.position;
+            go_SelectedIamge.SetActive(true);
+        }
 
     }
 

@@ -6,11 +6,13 @@ public class SpawnTrigger : MonoBehaviour
 {
     //MoveAgent 스크립트 
     MoveAgent moveAgent;
+    [SerializeField]
+    EnemyAI enemyAI;
 
     private void OnTriggerEnter(Collider other)
     {
         //플레이어 충돌 시
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") && enemyAI.state != EnemyAI.State.TRACE)
         {
             //MoveAget의 SpWn함수 
             moveAgent.Spawn();
@@ -26,6 +28,7 @@ public class SpawnTrigger : MonoBehaviour
     {
         //할당
         moveAgent = GameObject.FindGameObjectWithTag("ENEMY").GetComponent<MoveAgent>();
+        enemyAI = moveAgent.gameObject.GetComponent<EnemyAI>();
     }
 
     // Update is called once per frame

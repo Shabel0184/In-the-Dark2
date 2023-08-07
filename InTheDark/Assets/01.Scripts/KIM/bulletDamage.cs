@@ -33,6 +33,8 @@ public class bulletDamage : MonoBehaviour
             flarebullet.a = 1;
         }
         
+
+
     }
 
     //Ãµ Á¦°Å
