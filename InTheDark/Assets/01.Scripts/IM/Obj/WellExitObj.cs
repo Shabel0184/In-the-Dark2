@@ -7,7 +7,7 @@ public class WellExitObj : MonoBehaviour
 {
     public int Flashlight;
     public int airtank;
-   
+    public int rope;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +22,10 @@ public class WellExitObj : MonoBehaviour
                 case "airtank":
                     other.GetComponent<ItemPickUp>().item.exititemUse = 1;
                     airtank = 1;
+                    break;
+                case "Rope":
+                    other.GetComponent<ItemPickUp>().item.exititemUse = 1;
+                    rope = 1;
                     break;
             }
 
@@ -38,7 +42,7 @@ public class WellExitObj : MonoBehaviour
 
     void Exit()
     {
-        if (Flashlight > 0 && airtank > 0)
+        if (Flashlight > 0 && airtank > 0 && rope > 0)
         {
             Debug.Log("exit");
             //자동차 탈출 성공 이미지 활성화 && 타이틀씬 로드

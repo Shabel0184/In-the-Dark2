@@ -20,6 +20,10 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.instance.CreatTrapPooling();
+        GameManager.instance.CreateExitOBJ();
+        GameManager.instance.Load();
+
         audio = GetComponent<AudioSource>();
         escape = 0;
         Cursor.visible = false;

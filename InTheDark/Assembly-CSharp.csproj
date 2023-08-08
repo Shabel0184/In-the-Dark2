@@ -59,8 +59,10 @@
     <Compile Include="Assets\01.Scripts\IM\Enemy\EnemyAI.cs" />
     <Compile Include="Assets\01.Scripts\KIM\ItemSpawn.cs" />
     <Compile Include="Assets\01.Scripts\DrawerCheck.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\DoorDestroy.cs" />
     <Compile Include="Assets\01.Scripts\KIM\Gunflare.cs" />
     <Compile Include="Assets\01.Scripts\KIM\bulletDamage.cs" />
+    <Compile Include="Assets\01.Scripts\IM\Obj\DoorOpenObj.cs" />
     <Compile Include="Assets\01.Scripts\IM\TitleUIManager.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\swayc.cs" />
     <Compile Include="Assets\01.Scripts\ActionController.cs" />
@@ -97,15 +99,14 @@
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\SimpleCrosshair.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\Flaregun.cs" />
     <Compile Include="Assets\01.Scripts\KIM\mirror.cs" />
-    <Compile Include="Assets\01.Scripts\IM\PlayerMove.cs" />
     <Compile Include="Assets\01.Scripts\Slot.cs" />
     <Compile Include="Assets\01.Scripts\IM\MyGizmo.cs" />
     <Compile Include="Assets\01.Scripts\KIM\flarebullet.cs" />
     <Compile Include="Assets\01.Scripts\IM\PlayerDie.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\WellExitObj.cs" />
     <Compile Include="Assets\01.Scripts\Item.cs" />
-    <Compile Include="Assets\Samples\Recorder\3.0.3\Screenshot Capture Sample\CaptureScreenShotExample.cs" />
-    <Compile Include="Assets\01.Scripts\IM\Obj\DoorOpenObj.cs" />
+    <Compile Include="Assets\01.Scripts\IM\PlayerMove.cs" />
+    <Compile Include="Assets\01.Scripts\GameDateManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\09.ImportAssets\HighQualityBricks&amp;Walls\Shaders\stone-805287.shader" />
@@ -735,14 +736,14 @@
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Shared.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    <Reference Include="Unity.Recorder.Base">
+      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
@@ -755,9 +756,6 @@
     </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
       <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -789,17 +787,11 @@
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Core">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
@@ -807,14 +799,23 @@
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Recorder.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Shared.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Recorder">
       <HintPath>Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Recorder.Base">
-      <HintPath>Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

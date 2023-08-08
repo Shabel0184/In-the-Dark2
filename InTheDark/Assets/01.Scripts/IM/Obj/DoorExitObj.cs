@@ -8,6 +8,7 @@ public class DoorExitObj : MonoBehaviour
 {
     public int doorhandle;
 
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -24,6 +25,8 @@ public class DoorExitObj : MonoBehaviour
             //탈출 조건 충족했는지 확인하는 함수
             Exit();
         }
+
+        
     }
     
     void Start()

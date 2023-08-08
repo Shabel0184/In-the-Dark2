@@ -35,4 +35,12 @@ public class PlayerDie : MonoBehaviour
         }
     }
 
+    public void PlayerDieEvent()
+    {
+        //플레이어 사망 메서드 호출
+        enemyAI.PlayerDie();
+        gameOverPanel.SetActive(true);
+    }
+
+
 }

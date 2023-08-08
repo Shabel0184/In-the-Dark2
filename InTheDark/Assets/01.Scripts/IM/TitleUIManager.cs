@@ -52,7 +52,14 @@ public class TitleUIManager : MonoBehaviour
             }
         }
         yield return null;
-        SceneManager.LoadScene(1);
+        if (GameManager.instance.tutorial < 1)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(Random.Range(2, 3));
+        }
     }
 
     IEnumerator EixtFadeOut()

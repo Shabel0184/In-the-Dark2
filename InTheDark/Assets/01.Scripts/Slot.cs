@@ -211,7 +211,16 @@ public class Slot : MonoBehaviour
                     index = 5;
                     _itemUse = true;
                     break;
-                
+                case "Rope":
+                    exindex = 7;
+                    __item = GameManager.instance.exitpools[exindex].gameObject;
+                    __item.transform.position = GameManager.instance.camPos.position;
+                    __item.SetActive(true);
+                    StartCoroutine(obfalse(__item));
+
+                    index = 5;
+                    _itemUse = true;
+                    break;
             }
             // Destroy(_item.gameObject, 0.5f);
             

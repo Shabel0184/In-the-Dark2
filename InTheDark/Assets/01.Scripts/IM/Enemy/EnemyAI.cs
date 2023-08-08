@@ -73,6 +73,7 @@ public class EnemyAI : MonoBehaviour
 
 
     bool playerDie = false;
+    
 
     private void Awake()
     {
@@ -105,6 +106,7 @@ public class EnemyAI : MonoBehaviour
         state = State.PATROLL;
         StartCoroutine(CheckType());
         StartCoroutine(CheckState());
+       
 
     }
 
@@ -140,11 +142,11 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        while (true)
+        while (!playerDie)
         {
             float dist = Vector3.Distance(playerTr.position, enemyTr.position);
 
-            if (isListen < 1 && enemyFOV.FireItemTrace(out fireitemPos) && isStun < 1 && state != State.TRACE && state != State.IDLE)
+           if (isListen < 1 && enemyFOV.FireItemTrace(out fireitemPos) && isStun < 1 && state != State.TRACE && state != State.IDLE)
             {
                 state = State.LISTEN;
                 isListen = 1;
@@ -185,7 +187,7 @@ public class EnemyAI : MonoBehaviour
             {
                 state = State.STUN;
             }
-
+            
             yield return ws;
         }
 
@@ -395,6 +397,7 @@ public class EnemyAI : MonoBehaviour
     public void PlayerDie()
     {
         state = State.P_DIE;
+        playerTr.transform.GetComponent<PlayerMove>().isPlayerDie = true;
     }
 
 }

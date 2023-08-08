@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorOpenObj : MonoBehaviour
 {
     public int carkey;
-    DoorRotate dooropen;
+    Animator animator;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,24 +20,23 @@ public class DoorOpenObj : MonoBehaviour
             }
 
             //탈출 조건 충족했는지 확인하는 함수
-            Exit();
+            Open();
         }
     }
 
     void Start()
     {
         carkey = 0;
+        animator = GetComponent<Animator>();
     }
 
-    void Exit()
+    void Open()
     {
         if (carkey > 0)
         {
             Debug.Log("exit");
-
-            dooropen = gameObject.GetComponent<DoorRotate>();
-            dooropen.DoorOpen();
-            //탈출 성공 이미지 활성화 && 타이틀씬 로드
+            animator.SetBool("Open", true);
+            
         }
     }
 }

@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
 
     public bool isPlayerDie = false;
     public bool stun = false;
+   
+
     RotateToMouse rotateToMouse; // 마우스 이동으로 카메라 회전
     Rigidbody rb;
 
@@ -28,7 +30,7 @@ public class PlayerMove : MonoBehaviour
     bool rDown;
 
     bool isRun = false;
-
+    
     public Slider staminaBar;
     
 
@@ -40,6 +42,7 @@ public class PlayerMove : MonoBehaviour
         staminaBar.value = (currStamina / maxStamina) % 100;
         StartCoroutine(Stamina());
         cameraTransform = GetComponentInChildren<Camera>().GetComponent<Transform>();
+       
     }
 
     void FixedUpdate()
@@ -53,10 +56,11 @@ public class PlayerMove : MonoBehaviour
         if (!stun)
         {
             Move();
+            UpdateRotate();
         }
         GetInput();
         FreezeRotation();
-        UpdateRotate();
+        
 
         staminaBar.value = (currStamina / maxStamina) % 100;
     }
@@ -119,7 +123,7 @@ public class PlayerMove : MonoBehaviour
             {
                 if(currStamina < maxStamina)
                 { 
-                    currStamina += 5 * Time.deltaTime;
+                    currStamina += 10 * Time.deltaTime;
                 }
             }
             else
