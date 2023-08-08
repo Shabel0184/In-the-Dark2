@@ -10,9 +10,10 @@ public class PlayerDie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyAI = GetComponent<EnemyAI>();
-        gameOverPanel = GameObject.Find("GameOverImage");
-        gameOverPanel.SetActive(false);
+        /* enemyAI = GetComponent<EnemyAI>();
+         gameOverPanel = GameObject.Find("GameOverImage");
+         gameOverPanel.SetActive(false);*/
+        StartCoroutine(PanelOff());
     }
 
     // Update is called once per frame
@@ -33,6 +34,22 @@ public class PlayerDie : MonoBehaviour
             gameOverPanel.SetActive(true);
 
         }
+    }
+
+    public void PlayerDieEvent()
+    {
+        //플레이어 사망 메서드 호출
+        enemyAI.PlayerDie();
+        gameOverPanel.SetActive(true);
+    }
+
+
+    IEnumerator PanelOff()
+    {
+        enemyAI = GetComponent<EnemyAI>();
+        gameOverPanel = GameObject.Find("GameOverImage");
+        yield return new WaitForSeconds(0.2f);
+        gameOverPanel.SetActive(false);
     }
 
 }

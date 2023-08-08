@@ -1465,7 +1465,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6637260361255036305
 Transform:
   m_ObjectHideFlags: 0
@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  state: 0
+  state: 1
   playerTr: {fileID: 0}
   lastPlayerTr: {x: 0, y: 0, z: 0}
   fireitemPos: {x: 0, y: 0, z: 0}
@@ -1582,8 +1582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb56d3d359bfab44bc2a51c9b72e736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRange: 20
-  viewAngle: 120
+  viewRange: 30
+  viewAngle: 240
 --- !u!114 &5627897794069868967
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 459788715710099595}
   - component: {fileID: 2235802249436824008}
   - component: {fileID: 176410799098877035}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Trap_Half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8525507088412286289}
   - component: {fileID: 4077874088925993946}
   - component: {fileID: 6538123560976365159}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Trap_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 6702161230297413037}
   - component: {fileID: 8376699449010460678}
   - component: {fileID: 3876949139252104031}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Trap_Second_half
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 260849536485231695}
   - component: {fileID: 48272160918024333}
   - component: {fileID: -4079081740423240834}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,6 +302,7 @@ MonoBehaviour:
   curTime: 0
   lifeTime: 20
   clip: {fileID: 8300000, guid: bce136382ed4e9f49b248dbaf3fdaed7, type: 3}
+  coll: []
 --- !u!65 &48272160918024333
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -421,7 +422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421026172249976543}
   - component: {fileID: 2409121194396156486}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -2224,6 +2224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa7bc17487bfd4488d04a4d5e8b1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!65 &103267836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27661,6 +27662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa7bc17487bfd4488d04a4d5e8b1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!65 &1331635017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32076,6 +32078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa7bc17487bfd4488d04a4d5e8b1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!65 &1550244146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34001,6 +34004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa7bc17487bfd4488d04a4d5e8b1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!65 &1674111235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34869,6 +34873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa7bc17487bfd4488d04a4d5e8b1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!65 &1737846578
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36025,6 +36030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa7bc17487bfd4488d04a4d5e8b1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!65 &1788187179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37222,6 +37228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa7bc17487bfd4488d04a4d5e8b1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyAI: {fileID: 0}
 --- !u!65 &1884234597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39526,7 +39533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2022061811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39552,6 +39559,8 @@ MonoBehaviour:
   - {fileID: 1215395421967941289, guid: 69b976843bbb0db498565e30e8401f02, type: 3}
   - {fileID: 3620378294961317506, guid: a43f1186718fd9b4d9d6f39e3c1ee68b, type: 3}
   exitpools: []
+  tutorial: 0
+  gameDateManager: {fileID: 0}
 --- !u!4 &2022061812
 Transform:
   m_ObjectHideFlags: 0

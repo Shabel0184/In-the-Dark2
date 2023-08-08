@@ -46,9 +46,9 @@ public class Trap : MonoBehaviour
             //플레이어 정지 함수(이벤트) 호출
             StartCoroutine(PlayerStun(collision.collider));
             Collider[] coll = Physics.OverlapSphere(transform.position, 30f, 1 << enemyLayer);
-            if(coll.Length > 0)
+            if (coll.Length > 0)
             {
-                var AI = coll[0].GetComponent<EnemyAI>();
+                EnemyAI AI = coll[0].GetComponent<EnemyAI>();
                 AI.isTrapping = 1;
             }
 
@@ -62,7 +62,7 @@ public class Trap : MonoBehaviour
         _audio.PlayOneShot(clip, 1f);
         yield return new WaitForSeconds(3f);
         PlayerColl.GetComponent<PlayerMove>().stun = false;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
     }
 

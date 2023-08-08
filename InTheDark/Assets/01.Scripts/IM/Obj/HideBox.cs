@@ -9,6 +9,7 @@ public class HideBox : MonoBehaviour
     public Transform hidePos;
     public Transform playerHidePos; // 플레이어가 캐비닛 내부로 이동할 위치
     public float moveDuration = 1f; // 이동에 걸리는 시간
+    Light light;
 
     private void OnTriggerStay(Collider other)
     {
@@ -26,6 +27,11 @@ public class HideBox : MonoBehaviour
             StartCoroutine(HideDoor(other));
 
         }
+        else if(other.CompareTag("ENEMY") && other.GetComponent<EnemyAI>().state == EnemyAI.State.TRACE)
+        {
+            var playerDie = other.GetComponent<PlayerDie>();
+            playerDie.PlayerDieEvent();
+        }
     }
 
     IEnumerator HideDoor(Collider playerCollider)
@@ -37,11 +43,14 @@ public class HideBox : MonoBehaviour
         Vector3 targetPosition;
         Quaternion targetRotation;
         Rigidbody rb = playerCollider.GetComponent<Rigidbody>();
+        if(light == null)
+        light = playerCollider.GetComponentInChildren<Light>();
 
         switch (isHide)
         {
             case 0: //캐비닛 OUT
                 //문 열림
+                playerCollider.GetComponent<PlayerMove>().stun = false;
                 transform.Translate(0, 0, -3.5f);
                 yield return new WaitForSeconds(0.2f);
 
@@ -58,6 +67,8 @@ public class HideBox : MonoBehaviour
 
                 //물리 시스템 영향 On
                 rb.isKinematic = false;
+                
+                light.enabled = true;
                 yield return new WaitForSeconds(1.2f);
                 //문 닫힘
                 transform.Translate(0, 0, 3.5f);
@@ -69,6 +80,8 @@ public class HideBox : MonoBehaviour
             case 1: //캐비닛 IN
                 //물리 시스템 영향 Off
                 rb.isKinematic = true;
+                playerCollider.GetComponent<PlayerMove>().stun = true;
+                light.enabled = false;
                 //문 열림
                 transform.Translate(0, 0, -3.5f);
                 yield return new WaitForSeconds(0.2f);
@@ -87,7 +100,7 @@ public class HideBox : MonoBehaviour
                 yield return new WaitForSeconds(1.1f);
                 //문 닫힘
                 transform.Translate(0, 0, 3.5f);
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.2f);
                 //플레이어가 문쪽으로 향하는 방향
                 Vector3 directionToCabinet = (transform.position - playerCollider.transform.position).normalized;
                 //

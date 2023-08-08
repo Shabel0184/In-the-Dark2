@@ -63,21 +63,21 @@
     <Compile Include="Assets\01.Scripts\KIM\bulletDamage.cs" />
     <Compile Include="Assets\01.Scripts\IM\TitleUIManager.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\swayc.cs" />
-    <Compile Include="Assets\01.Scripts\ActionController.cs" />
+    <Compile Include="Assets\01.Scripts\Player\ActionController.cs" />
     <Compile Include="Assets\09.ImportAssets\Free HDR Skyboxes Pack\Example Scenes\Script\RotateCamera.cs" />
     <Compile Include="Assets\01.Scripts\Inventory.cs" />
     <Compile Include="Assets\01.Scripts\IM\Enemy\SpawnTrigger.cs" />
     <Compile Include="Assets\01.Scripts\IM\TutorialSceneTrigger.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\Trap.cs" />
     <Compile Include="Assets\01.Scripts\IM\UIManager.cs" />
-    <Compile Include="Assets\01.Scripts\QuickSlotController.cs" />
-    <Compile Include="Assets\01.Scripts\RotateToMouse.cs" />
+    <Compile Include="Assets\01.Scripts\Player\QuickSlotController.cs" />
+    <Compile Include="Assets\01.Scripts\Player\RotateToMouse.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\Door.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\CarExitObj.cs" />
     <Compile Include="Assets\09.ImportAssets\Keypad\Script\Playsound.cs" />
     <Compile Include="Assets\01.Scripts\KIM\KeyPad.cs" />
     <Compile Include="Assets\01.Scripts\IM\Obj\HideBox.cs" />
-    <Compile Include="Assets\01.Scripts\PlayerMove.cs" />
+    <Compile Include="Assets\01.Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\01.Scripts\KIM\DoorRotate.cs" />
     <Compile Include="Assets\01.Scripts\IM\Item\amulet.cs" />
     <Compile Include="Assets\01.Scripts\IM\GostSelect.cs" />
@@ -97,11 +97,12 @@
     <Compile Include="Assets\09.ImportAssets\2\Simple Crosshair Generator\Scripts\SimpleCrosshair.cs" />
     <Compile Include="Assets\07.Models\Kim\Flare Gun\Scripts\Flaregun.cs" />
     <Compile Include="Assets\01.Scripts\KIM\mirror.cs" />
-    <Compile Include="Assets\01.Scripts\Slot.cs" />
+    <Compile Include="Assets\01.Scripts\Player\Slot.cs" />
     <Compile Include="Assets\01.Scripts\IM\MyGizmo.cs" />
     <Compile Include="Assets\01.Scripts\KIM\flarebullet.cs" />
     <Compile Include="Assets\01.Scripts\IM\PlayerDie.cs" />
     <Compile Include="Assets\01.Scripts\Item.cs" />
+    <Compile Include="Assets\01.Scripts\GameDateManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.Models\Kim\Smartphone\StandardColorMask.shader" />

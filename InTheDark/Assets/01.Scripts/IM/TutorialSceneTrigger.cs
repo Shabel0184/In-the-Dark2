@@ -10,7 +10,9 @@ public class TutorialSceneTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            
+            GameManager.instance.tutorial = 1;
+            GameManager.instance.gameDateManager.JsonSave();
+
             SceneManager.LoadScene(Random.Range(2, 3));
         }
     }

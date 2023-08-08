@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour
     public Transform camPos;
     public GameObject[] exititems;
     public List<GameObject> exitpools = new List<GameObject>();
-    
+
+    [Header("튜토리얼 진행 여부")]
+    public int tutorial;
+    public GameDateManager gameDateManager;
+
     void Awake()
     {
         if(instance == null)
@@ -26,10 +30,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         camPos = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+        DontDestroyOnLoad(this.gameObject);
         
     }
     private void Start()
     {
+        
         CreatTrapPooling();
         CreateExitOBJ();
         
@@ -38,6 +44,7 @@ public class GameManager : MonoBehaviour
     //오브젝트 풀 생성 함수
     public void CreatTrapPooling()
     {
+        trapPool.Clear();
         GameObject TrapObjectPools = new GameObject("TrapObjectPools");
         for(int i = 0; i < maxPool; i++)
         {
@@ -50,6 +57,7 @@ public class GameManager : MonoBehaviour
 
     public void CreateExitOBJ()
     {
+        exitpools.Clear();
         GameObject ExitItemPools = new GameObject("ExitItemPools");
         for(int i = 0; i <exititems.Length; i++)
         {
@@ -77,7 +85,10 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-
+    public void Load()
+    {
+        camPos = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Transform>();
+    }
     
     void Update()
     {

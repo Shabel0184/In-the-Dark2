@@ -11,7 +11,6 @@ public class EnemyAI : MonoBehaviour
     {
         WALK, //배회령
         TRAP, //상실령
-        TANGK  //청음령
     }
 
     //상태
@@ -73,6 +72,7 @@ public class EnemyAI : MonoBehaviour
 
 
     bool playerDie = false;
+    
 
     private void Awake()
     {
@@ -105,6 +105,7 @@ public class EnemyAI : MonoBehaviour
         state = State.PATROLL;
         StartCoroutine(CheckType());
         StartCoroutine(CheckState());
+       
 
     }
 
@@ -128,10 +129,7 @@ public class EnemyAI : MonoBehaviour
             StartCoroutine(TrapAction());
             StartCoroutine(TrapDown());
         }
-        else if (type == Type.TANGK)
-        {
-            // StartCoroutine(HearCheckState());
-        }
+        
     }
 
 
@@ -140,11 +138,11 @@ public class EnemyAI : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        while (true)
+        while (!playerDie)
         {
             float dist = Vector3.Distance(playerTr.position, enemyTr.position);
 
-            if (isListen < 1 && enemyFOV.FireItemTrace(out fireitemPos) && isStun < 1 && state != State.TRACE && state != State.IDLE)
+           if (isListen < 1 && enemyFOV.FireItemTrace(out fireitemPos) && isStun < 1 && state != State.TRACE && state != State.IDLE)
             {
                 state = State.LISTEN;
                 isListen = 1;
@@ -185,10 +183,7 @@ public class EnemyAI : MonoBehaviour
             {
                 state = State.STUN;
             }
-            else if( dist > 90)
-            {
-                moveAgent.Spawn();
-            }
+            
             yield return ws;
         }
 
@@ -398,6 +393,7 @@ public class EnemyAI : MonoBehaviour
     public void PlayerDie()
     {
         state = State.P_DIE;
+        playerTr.transform.GetComponent<PlayerMove>().isPlayerDie = true;
     }
 
 }

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 50
+  controlID: 27
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 131
+  controlID: 358
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: LightingWindow
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -321,15 +321,15 @@ MonoBehaviour:
     y: 0
     width: 466
     height: 668
-  m_MinSize: {x: 391, y: 411}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
   - {fileID: 22}
   - {fileID: 23}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -615,9 +615,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 159.85234, y: 4.3753963, z: 151.53159}
+    m_Target: {x: 118.65231, y: 15.351442, z: 15.285841}
     speed: 2
-    m_Value: {x: 159.85234, y: 4.3753963, z: 151.53159}
+    m_Value: {x: 118.65231, y: 15.351442, z: 15.285841}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -664,13 +664,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.49341398, y: -0.049884595, z: 0.025939984, w: -0.8689712}
+    m_Target: {x: 0.31829077, y: -0.6832597, z: 0.4491108, w: 0.48169282}
     speed: 2
-    m_Value: {x: -0.49298778, y: -0.04984151, z: 0.025917578, w: -0.8682206}
+    m_Value: {x: 0.3179918, y: -0.6826179, z: 0.44868895, w: 0.48124036}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 36.373066
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 36.373066
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -935,7 +935,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -335326
+  m_LastSelectedObjectID: 562216
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -970,21 +970,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6080feff0ca3feffcca4feff50a9feff54a9feff58a9feffdeb2feffe4dafeff3cdbfeff40dbfeff44dbfeffeae8feff4cf4ffffe6f4ffff50f5ffff54f5ffffa2f9ffff06fbffff
+      m_ExpandedIDs: c878e1ff0e8ae1ff7099e1ff64a8e1ffa6b5e1ff8cc3e1ffee4de2ffd4dde2ff126ce3ffe0e6e4ffc661e6ffba63e6ff8a71e6ff72f7e7ffb6fae7ff82fbe7ff5c74e9fffe79e9ff2e7ee9fffa7ee9ff2afdeaff6a02ebffda80ecffb85cedff90adedffd42cefffbaabf0ff8e07f3ff9cdff3ffae38f6ff7692f8ffc6ebfaff66eefaffe0cefbff1aa9fcff8e87fdff6064feff386afeff06fbfffff4ffffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: TrapGost
+        m_OriginalName: TrapGost
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 562216
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -1036,22 +1036,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/03.Prefebs/Kim/PlayerItem
+    - Assets/01.Scripts/IM/Enemy
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/03.Prefebs/Kim/PlayerItem
+  - Assets/01.Scripts/IM/Enemy
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\SAMSUNG\Documents\In-the-Dark2\InTheDark
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: ba5a0000
-    m_LastClickedID: 23226
-    m_ExpandedIDs: 00000000665a0000685a00006a5a00006c5a00006e5a0000705a0000725a0000745a0000765a0000785a00007a5a00007c5a00007e5a0000805a0000825a0000845a0000865a0000885a00008a5a00008c5a00008e5a0000905a0000925a0000945a0000965a0000985a00009a5a00009c5a00009e5a0000a05a0000a25a0000a45a0000a65a0000c45a000000ca9a3b
+    m_SelectedIDs: 42e90200
+    m_LastClickedID: 190786
+    m_ExpandedIDs: 00000000ace80200aee80200b0e80200b2e80200b4e80200b6e80200b8e80200bae80200bce80200bee80200c0e80200c2e80200c4e80200c6e80200c8e80200cae80200cce80200cee80200d0e80200d2e80200d4e80200d6e80200d8e80200dae80200dce80200dee80200e0e80200e2e80200e4e80200e6e80200e8e80200eae80200ece8020000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1079,7 +1079,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000665a0000685a00006a5a00006c5a00006e5a0000705a0000725a0000745a0000765a0000785a00007a5a00007c5a00007e5a0000805a0000825a0000845a0000865a0000885a00008a5a00008c5a00008e5a0000905a0000925a0000945a0000965a0000985a00009a5a00009c5a00009e5a0000a05a0000a25a0000a45a0000a65a0000
+    m_ExpandedIDs: 00000000ace80200aee80200b0e80200b2e80200b4e80200b6e80200b8e80200bae80200bce80200bee80200c0e80200c2e80200c4e80200c6e80200c8e80200cae80200cce80200cee80200d0e80200d2e80200d4e80200d6e80200d8e80200dae80200dce80200dee80200e0e80200e2e80200e4e80200e6e80200e8e80200eae80200ece80200
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1110,18 +1110,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 66570000685700006a570000da660000da60000000000000c69800009ed1feff347900009ef5feffe6151800
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: amulet
-      m_OriginalName: amulet
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 25368
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
