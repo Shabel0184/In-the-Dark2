@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.AI;
 using static UnityEditor.Progress;
 
 public class QuickSlotController : MonoBehaviour
@@ -25,7 +26,7 @@ public class QuickSlotController : MonoBehaviour
     {
         quickSlots = tf_parent.GetComponentsInChildren<Slot>();
         selectedSlot = 0;
-        
+
     }
 
     void Update()
@@ -37,42 +38,47 @@ public class QuickSlotController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && itemUseing < 1)
         {
-            
+
             StartCoroutine(_Useitem2(0));
+            ChangeSlot(0);
         }
-            
         else if (Input.GetKeyDown(KeyCode.Alpha2) && itemUseing < 1)
         {
             StartCoroutine(_Useitem2(1));
             ChangeSlot(1);
         }
-            
+
         else if (Input.GetKeyDown(KeyCode.Alpha3) && itemUseing < 1)
         {
             StartCoroutine(_Useitem2(2));
             ChangeSlot(2);
         }
-            
+
         else if (Input.GetKeyDown(KeyCode.Alpha4) && itemUseing < 1)
         {
             StartCoroutine(_Useitem2(3));
             ChangeSlot(3);
         }
-            
+
         else if (Input.GetKeyDown(KeyCode.Alpha5) && itemUseing < 1)
         {
             StartCoroutine(_Useitem2(4));
             ChangeSlot(4);
         }
-            
+
         else if (Input.GetKeyDown(KeyCode.Alpha6) && itemUseing < 1)
         {
             StartCoroutine(_Useitem2(5));
             ChangeSlot(5);
         }
-            
+        
+        //아이템 버리기
+        if (Input.GetKeyDown(KeyCode.X) && go_SelectedIamge.activeSelf == true )
+        {
+            ItmeDrop(selectedSlot);
+        }
     }
-    
+
 
     IEnumerator _Useitem2(int num)
     {
@@ -87,7 +93,7 @@ public class QuickSlotController : MonoBehaviour
                 switch (itemIndex)
                 {
                     case 0:
-                         _item = Instantiate(selectItem.itemPrefab);
+                        _item = Instantiate(selectItem.itemPrefab);
                         yield return new WaitForSeconds(1f);
                         itemUseing = 0;
                         break;
@@ -104,7 +110,7 @@ public class QuickSlotController : MonoBehaviour
                         _item = Instantiate(selectItem.itemPrefab);
                         yield return new WaitForSeconds(1f);
                         itemUseing = 0;
-                        Destroy(_item );
+                        Destroy(_item);
                         break;
                     default:
                         itemUseing = 0;
@@ -134,6 +140,21 @@ public class QuickSlotController : MonoBehaviour
 
         // 선택된 슬롯으로 이미지 이동
         go_SelectedIamge.transform.position = quickSlots[selectedSlot].transform.position;
+        go_SelectedIamge.SetActive(true);
+
+
+
+    }
+    IEnumerator SelectSlot(int _num)
+    {
+        // 선택된 슬롯
+        selectedSlot = _num;
+
+        // 선택된 슬롯으로 이미지 이동
+        go_SelectedIamge.transform.position = quickSlots[selectedSlot].transform.position;
+        go_SelectedIamge.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        go_SelectedIamge.SetActive(false);
 
     }
 
@@ -141,11 +162,11 @@ public class QuickSlotController : MonoBehaviour
     public void AcquireItem(Item _item, int count = 1)
     {
         PutSlot(_item, count);
-        if(notput)
+        if (notput)
         {
             PutSlot(_item, count);
         }
-        
+
     }
 
     private void PutSlot(Item _item, int count)
@@ -181,5 +202,25 @@ public class QuickSlotController : MonoBehaviour
         }
         notput = true;
     }
-  
+
+
+    void ItmeDrop(int selectSlot)
+    {
+        if (quickSlots[selectSlot].item != null)
+        {
+            Vector3 playerDir = GameManager.instance.camPos.position;
+
+            Vector3 down = Vector3.down;
+            RaycastHit rhit;
+            if (Physics.Raycast(playerDir, down, out rhit, 5f, 1 << 8))
+            {
+                Vector3 spawn = rhit.point + Vector3.up * 0.3f;
+                Instantiate(quickSlots[selectSlot].item.CreatePrefab, spawn, quickSlots[selectSlot].item.CreatePrefab.transform.localRotation);
+                quickSlots[selectSlot].ITEMDROP = 1;
+            }
+
+        }
+    }
+
+
 }

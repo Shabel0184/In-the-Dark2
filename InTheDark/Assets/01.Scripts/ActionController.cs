@@ -91,6 +91,7 @@ public class ActionController : MonoBehaviour
         actionText.gameObject.SetActive(false);
     }
 
+    
     void CanPickUp()
     {
         if (pickupActivated)
@@ -106,7 +107,7 @@ public class ActionController : MonoBehaviour
                     {
                         if (solts[i].item != null)
                         {
-                            if ((solts[i].item.itemName == _item.itemName && solts[i].itemCount > 5))
+                            if ((solts[i].item.itemName == _item.itemName && solts[i].itemCount > 5) || (solts[i].item.itemName == _item.itemName && solts[i].item.itemType == Item.ItemType.Exititem))
                             {
                                 a = 1;
                                 break;

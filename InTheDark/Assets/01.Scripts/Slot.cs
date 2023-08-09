@@ -10,7 +10,7 @@ public class Slot : MonoBehaviour
     public Item item; // 획득한 아이템
     public int itemCount; // 획득한 아이템의 개수
     public Image itemImage; // 아이템 이미지
-    
+
 
     bool itempull;
 
@@ -19,6 +19,30 @@ public class Slot : MonoBehaviour
     [SerializeField]
     GameObject go_CountImage;
     public GameObject a;
+
+
+
+    //프로퍼티
+    int itemDrop = 0;
+    public int ITEMDROP
+    {
+        get { return itemDrop; }
+        set
+        {
+            itemDrop = value;
+            if (itemCount < 2)
+            {
+                ClearSlot();
+            }
+            else
+            {
+                itemCount--;
+                text_Count.text = itemCount.ToString();
+                // SetSlotCount(itemCount);
+            }
+            itemDrop = 0;
+        }
+    }
 
     private void Start()
     {
@@ -45,12 +69,13 @@ public class Slot : MonoBehaviour
         {
             go_CountImage.SetActive(true);
             text_Count.text = itemCount.ToString();
+            a.SetActive(true);
         }
         else if (item.itemType == Item.ItemType.Exititem)
         {
             go_CountImage.SetActive(true);
             a.SetActive(false);
-            
+
         }
         else
         {
@@ -82,7 +107,7 @@ public class Slot : MonoBehaviour
 
             if (itemCount <= 0)
                 ClearSlot();
-            
+
         }
         else
         {
@@ -92,19 +117,19 @@ public class Slot : MonoBehaviour
 
     }
 
-   
 
 
-   
+
+
     public void itemUse2(out int index, out bool _itemUse)
     {
 
         index = 0;
         _itemUse = false;
 
-        if (item != null && itemCount > 0 && item.itemType != Item.ItemType.Exititem) 
+        if (item != null && itemCount > 0 && item.itemType != Item.ItemType.Exititem)
         {
-           
+
 
             switch (item.itemName)
             {
@@ -125,7 +150,7 @@ public class Slot : MonoBehaviour
                     _itemUse = true;
                     break;
 
-            } 
+            }
             itemCount--;
             if (itemCount == 0)
             {
@@ -138,7 +163,7 @@ public class Slot : MonoBehaviour
             int exindex;
             //GameObject _item = Instantiate(item.itemPrefab, GameManager.instance.camPos);
 
-            GameObject __item; 
+            GameObject __item;
             switch (item.itemName)
             {
                 case "airtank":
@@ -161,7 +186,7 @@ public class Slot : MonoBehaviour
                     index = 5;
                     _itemUse = true;
                     break;
-               case "CarKey":
+                case "CarKey":
                     exindex = 2;
                     __item = GameManager.instance.exitpools[exindex].gameObject;
                     __item.transform.position = GameManager.instance.camPos.position;
@@ -223,7 +248,7 @@ public class Slot : MonoBehaviour
                     break;
             }
             // Destroy(_item.gameObject, 0.5f);
-            
+
         }
         else
         {
@@ -250,14 +275,14 @@ public class Slot : MonoBehaviour
 
     IEnumerator obfalse(GameObject a)
     {
-        yield return new WaitForSeconds(0.5f);
-        if(a.GetComponent<ItemPickUp>().item.exititemUse > 0)
+        yield return new WaitForSeconds(0.1f);
+        if (a.GetComponent<ItemPickUp>().item.exititemUse > 0)
         {
             //ExitUseing = 1;
             itemCount--;
             ClearSlot();
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         a.SetActive(false);
 
     }

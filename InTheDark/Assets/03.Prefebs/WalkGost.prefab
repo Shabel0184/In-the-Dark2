@@ -1514,7 +1514,7 @@ GameObject:
   - component: {fileID: 5841186785063145666}
   - component: {fileID: 722927630177863182}
   - component: {fileID: 7631256185942423393}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WalkGost
   m_TagString: ENEMY
   m_Icon: {fileID: 0}
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   playerTr: {fileID: 0}
   lastPlayerTr: {x: 0, y: 0, z: 0}
   fireitemPos: {x: 0, y: 0, z: 0}
-  traceDist: 0
+  traceDist: 20
   spotDist: 5
   isStun: 0
   isListen: 0
@@ -1616,8 +1616,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fb56d3d359bfab44bc2a51c9b72e736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRange: 15
-  viewAngle: 120
+  viewRange: 30
+  viewAngle: 220
 --- !u!195 &5841186785063145666
 NavMeshAgent:
   m_ObjectHideFlags: 0
