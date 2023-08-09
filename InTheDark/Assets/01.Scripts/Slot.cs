@@ -20,6 +20,33 @@ public class Slot : MonoBehaviour
     GameObject go_CountImage;
     public GameObject a;
 
+
+
+    //프로퍼티
+    int itemDrop = 0;
+    public int ITEMDROP
+    {
+        get { return itemDrop; }
+        set
+        {
+            itemDrop = value;
+            if(itemDrop > 0)
+            {
+                if (itemCount < 2)
+                {
+                    ClearSlot();
+                }
+                else
+                {
+                    itemCount--;
+                    text_Count.text = itemCount.ToString();
+                    // SetSlotCount(itemCount);
+                }
+                itemDrop = 0;
+            }
+        }
+    }
+
     private void Start()
     {
         a = transform.GetChild(0).transform.GetChild(0).gameObject;
@@ -45,6 +72,7 @@ public class Slot : MonoBehaviour
         {
             go_CountImage.SetActive(true);
             text_Count.text = itemCount.ToString();
+            a.SetActive(true);
         }
         else if (item.itemType == Item.ItemType.Exititem)
         {

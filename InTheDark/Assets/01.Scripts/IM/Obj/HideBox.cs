@@ -42,7 +42,7 @@ public class HideBox : MonoBehaviour
         Vector3 startPosition = playerCollider.transform.position;
         Vector3 targetPosition;
         Quaternion targetRotation;
-        Rigidbody rb = playerCollider.GetComponent<Rigidbody>();
+        
         if(light == null)
         light = playerCollider.GetComponentInChildren<Light>();
 
@@ -63,10 +63,8 @@ public class HideBox : MonoBehaviour
                     playerCollider.transform.position = Vector3.Lerp(startPosition, targetPosition, t);
                     yield return null;
                 }
-                playerCollider.transform.position = targetPosition; // 정확한 위치로 설정합니다.
+                playerCollider.transform.position = targetPosition; 
 
-                //물리 시스템 영향 On
-                rb.isKinematic = false;
                 
                 light.enabled = true;
                 yield return new WaitForSeconds(1.2f);
@@ -78,8 +76,6 @@ public class HideBox : MonoBehaviour
                 break;
 
             case 1: //캐비닛 IN
-                //물리 시스템 영향 Off
-                rb.isKinematic = true;
                 playerCollider.GetComponent<PlayerMove>().stun = true;
                 light.enabled = false;
                 //문 열림
@@ -119,7 +115,7 @@ public class HideBox : MonoBehaviour
                     yield return null;
                 }
 
-                //playerCollider.transform.rotation = targetRotation;
+                
 
                 //캐비닛 상호작용 중 아님으로
                 isHiding = 0;
@@ -127,8 +123,4 @@ public class HideBox : MonoBehaviour
         }
     }
 }
-/* 
- 캐비닛에 플레이어가 들어간 상태면 카메라만 돌릴 수 있게
-bool값을 쓰거나 int 값을 써서 플레이어 상태 캐비닛 인걸로 플레이어 움직이는 스크립트에서 바꿔주면 될 듯하다.
- */
-//플레이어가 회전 후 바닥쪽을 보는 현상 고쳐야됨
+
