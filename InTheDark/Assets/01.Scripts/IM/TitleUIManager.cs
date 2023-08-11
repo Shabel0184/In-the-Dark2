@@ -6,24 +6,26 @@ using UnityEngine.UI;
 
 public class TitleUIManager : MonoBehaviour
 {
+    public Sound tileSound;
+
+
     public Image fadePanel;
     float fadevalue = 0;
     float backgroundvolum = 1;
     AudioSource backgroundM;
-    public AudioClip backgroundClip;
-    public AudioClip buttonClip;
-    public GameObject glassImage;
+
+    public GameObject glassImage; 
     public GameObject glassImage_2;
     private void Start()
     {
         backgroundM = GetComponent<AudioSource>();
-        backgroundM.clip = backgroundClip;
+        backgroundM.clip = tileSound.audioClips[0];
         backgroundM.Play();
 
     }
     public void StartButtonCleckEvent()
     {
-        backgroundM.PlayOneShot(buttonClip, 1f);
+        backgroundM.PlayOneShot(tileSound.audioClips[1], 1f);
         glassImage.SetActive(true);
         StartCoroutine(StartFadeOut());
     }
@@ -31,7 +33,7 @@ public class TitleUIManager : MonoBehaviour
 
     public void EixtButtonCleckEvent()
     {
-        backgroundM.PlayOneShot(buttonClip, 1f);
+        backgroundM.PlayOneShot(tileSound.audioClips[1], 1f);
         glassImage_2.SetActive(true);
         StartCoroutine(EixtFadeOut());
     }

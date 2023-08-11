@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeimage: {fileID: 0}
-  audio: {fileID: 792611815}
   clickAudio: {fileID: 8300000, guid: f024304fc0a8c4740b58ba2cd4825081, type: 3}
+  esPanel: {fileID: 0}
+  Panel: {fileID: 0}
 --- !u!82 &792611815
 AudioSource:
   m_ObjectHideFlags: 0

@@ -43,6 +43,7 @@ public class PlayerDie : MonoBehaviour
     {
         enemyAI = GetComponent<EnemyAI>();
         gameOverPanel = GameObject.Find("GameOverImage");
+        
         yield return new WaitForSeconds(0.2f);
         gameOverPanel.SetActive(false);
     }

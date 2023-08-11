@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public Sound gostSound;
 
+    public delegate void EnemyTraceHandler();
+
+    public static EnemyTraceHandler OnTraceSoundEvent;
+    public static EnemyTraceHandler OffSoundEvent;
     //귀신 종류
     public enum Type
     {
@@ -41,7 +46,7 @@ public class EnemyAI : MonoBehaviour
     Transform enemyTr;
 
     //추격 범위
-    
+
     public float traceDist = 20f;
 
     //강제 인식 범위
@@ -73,7 +78,7 @@ public class EnemyAI : MonoBehaviour
 
 
     bool playerDie = false;
-    
+
 
     private void Awake()
     {
@@ -106,7 +111,7 @@ public class EnemyAI : MonoBehaviour
         state = State.PATROLL;
         StartCoroutine(CheckType());
         StartCoroutine(CheckState());
-       
+
 
     }
 
@@ -146,12 +151,12 @@ public class EnemyAI : MonoBehaviour
         {
             float dist = Vector3.Distance(playerTr.position, enemyTr.position);
 
-           if (isListen < 1 && enemyFOV.FireItemTrace(out fireitemPos) && isStun < 1 && state != State.TRACE && state != State.IDLE)
+            if (isListen < 1 && enemyFOV.FireItemTrace(out fireitemPos) && isStun < 1 && state != State.TRACE && state != State.IDLE)
             {
                 state = State.LISTEN;
                 isListen = 1;
             }
-            else if(isStun < 1 && isTrapping > 0)
+            else if (isStun < 1 && isTrapping > 0)
             {
                 state = State.TRACE;
                 yield return new WaitForSeconds(2f);
@@ -171,13 +176,13 @@ public class EnemyAI : MonoBehaviour
                     state = State.TRACE;
                     lastPlayerTr = playerTr.position;
                 }
-                
+
             }
-            else if(state == State.TRACE && !enemyFOV.isViewPlayer() && !enemyFOV.isTracePlayer())
+            else if (state == State.TRACE && !enemyFOV.isViewPlayer() && !enemyFOV.isTracePlayer())
             {
                 isLast = 1;
                 state = State.TRACELAST;
-                
+
             }
             else if (isLast < 1 && isListen < 1 && isStun < 1)
             {
@@ -187,7 +192,7 @@ public class EnemyAI : MonoBehaviour
             {
                 state = State.STUN;
             }
-            
+
             yield return ws;
         }
 
@@ -211,6 +216,8 @@ public class EnemyAI : MonoBehaviour
             switch (state)
             {
                 case State.IDLE:
+                    //이벤트
+                    SoundOff();
                     moveAgent.Stop();
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, false);
@@ -223,6 +230,8 @@ public class EnemyAI : MonoBehaviour
                     moveAgent.TRACETARGET = playerTr.position;
                     anim.SetBool(hashRun, true);
                     anim.SetBool(hashWalk, false);
+                    //이벤트
+                    StateSound();
                     break;
                 case State.TRACELAST:
                     moveAgent.FIREITEMTRACE = lastPlayerTr;
@@ -230,6 +239,8 @@ public class EnemyAI : MonoBehaviour
                     anim.SetBool(hashWalk, false);
                     break;
                 case State.PATROLL:
+                    //이벤트
+                    SoundOff();
                     moveAgent.PATROLLING = true;
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, true);
@@ -249,6 +260,8 @@ public class EnemyAI : MonoBehaviour
                     state = State.PATROLL;
                     break;
                 case State.P_DIE:
+                    //이벤트
+                    SoundOff();
                     moveAgent.Stop();
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, false);
@@ -277,6 +290,8 @@ public class EnemyAI : MonoBehaviour
             switch (state)
             {
                 case State.IDLE:
+                    //이벤트
+                    SoundOff();
                     moveAgent.Stop();
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, false);
@@ -289,7 +304,8 @@ public class EnemyAI : MonoBehaviour
                     moveAgent.TRACETARGET = playerTr.position;
                     anim.SetBool(hashRun, true);
                     anim.SetBool(hashWalk, false);
-                    
+                    //이벤트
+                    StateSound();
                     break;
                 case State.TRACELAST:
                     moveAgent.FIREITEMTRACE = lastPlayerTr;
@@ -297,6 +313,8 @@ public class EnemyAI : MonoBehaviour
                     anim.SetBool(hashWalk, false);
                     break;
                 case State.PATROLL:
+                    //이벤트
+                    SoundOff();
                     moveAgent.PATROLLING = true;
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, true);
@@ -316,6 +334,8 @@ public class EnemyAI : MonoBehaviour
                     state = State.PATROLL;
                     break;
                 case State.P_DIE:
+                    //이벤트
+                    SoundOff();
                     moveAgent.Stop();
                     anim.SetBool(hashRun, false);
                     anim.SetBool(hashWalk, false);
@@ -398,6 +418,25 @@ public class EnemyAI : MonoBehaviour
     {
         state = State.P_DIE;
         playerTr.transform.GetComponent<PlayerMove>().isPlayerDie = true;
+    }
+
+
+    void StateSound()
+    {
+        switch (state)
+        {
+            case State.TRACE:
+                OnTraceSoundEvent();
+                break;
+        }
+
+    }
+
+
+
+    void SoundOff()
+    {
+        OffSoundEvent();
     }
 
 }
